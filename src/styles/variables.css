@@ -1,0 +1,48 @@
+:root {
+  /* VELOOP Brand */
+  --veloop-primary: #6d28d9;
+  --veloop-primary-light: #8b5cf6;
+  --veloop-primary-dark: #4c1d95;
+
+  /* Reward Colors */
+  --veloop-gold: #f5b72b;
+  --veloop-gold-light: #ffd76a;
+
+  /* Background */
+  --veloop-background: #f8f5ff;
+  --veloop-background-soft: #f3edff;
+
+  /* Text */
+  --veloop-text: #111827;
+  --veloop-text-secondary: #4b5563;
+  --veloop-text-muted: #6b7280;
+
+  /* Surface */
+  --veloop-white: #ffffff;
+  --veloop-border: #e5e7eb;
+
+  /* Status */
+  --veloop-success: #16a34a;
+  --veloop-error: #dc2626;
+  --veloop-warning: #f59e0b;
+
+  /* Radius */
+  --veloop-radius-sm: 8px;
+  --veloop-radius-md: 14px;
+  --veloop-radius-lg: 22px;
+  --veloop-radius-xl: 30px;
+
+  /* Shadows */
+  --veloop-shadow-sm:
+    0 4px 16px rgba(76, 29, 149, 0.08);
+
+  --veloop-shadow-md:
+    0 12px 40px rgba(76, 29, 149, 0.12);
+
+  --veloop-shadow-lg:
+    0 24px 70px rgba(76, 29, 149, 0.16);
+
+  /* Transitions */
+  --veloop-transition:
+    0.25s ease;
+}
