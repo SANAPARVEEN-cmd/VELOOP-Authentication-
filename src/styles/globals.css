@@ -50,3 +50,323 @@ a {
 ::selection {
   background: rgba(109, 40, 217, 0.18);
 }
+/* =========================================
+   AUTHENTICATION LAYOUT
+========================================= */
+
+.auth-container {
+  width: min(1450px, 92%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(420px, 0.9fr);
+
+  align-items: center;
+
+  gap: 40px;
+
+  min-height: calc(100vh - 110px);
+
+  padding: 30px 0 70px;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 24px;
+
+  padding: 38px;
+
+  box-shadow:
+    0 20px 60px rgba(76, 29, 149, 0.12);
+
+  backdrop-filter: blur(20px);
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+.login-page h2 {
+  margin: 0;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  text-align: center;
+}
+
+.login-subtitle {
+  margin: 10px 0 28px;
+
+  text-align: center;
+
+  color: var(--veloop-text-secondary);
+
+  font-size: 14px;
+}
+
+
+/* Tabs */
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-bottom: 1px solid var(--veloop-border);
+
+  margin-bottom: 30px;
+}
+
+.auth-tabs button {
+  border: 0;
+  background: transparent;
+
+  padding: 15px 8px;
+
+  color: var(--veloop-text-secondary);
+
+  font-size: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  position: relative;
+}
+
+.auth-tabs button.active {
+  color: var(--veloop-primary);
+  font-weight: 600;
+}
+
+.auth-tabs button.active::after {
+  content: '';
+
+  position: absolute;
+
+  bottom: -1px;
+  left: 12%;
+  right: 12%;
+
+  height: 2px;
+
+  background: var(--veloop-primary);
+}
+
+
+/* Form */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.input-wrapper {
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--veloop-border);
+
+  border-radius: 10px;
+
+  background: white;
+
+  transition: var(--veloop-transition);
+}
+
+.input-wrapper svg {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--veloop-primary);
+
+  box-shadow:
+    0 0 0 3px rgba(109, 40, 217, 0.1);
+}
+
+.input-wrapper input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  font-size: 14px;
+}
+
+.password-toggle {
+  border: 0;
+
+  background: transparent;
+
+  color: #9ca3af;
+
+  padding: 0;
+
+  display: flex;
+}
+
+
+/* Login options */
+
+.login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 8px 0 25px;
+
+  font-size: 13px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+}
+
+.remember input {
+  accent-color: var(--veloop-primary);
+}
+
+.forgot-link {
+  border: 0;
+  background: transparent;
+
+  color: var(--veloop-primary);
+
+  font-size: 13px;
+}
+
+
+/* Login button */
+
+.login-button {
+  width: 100%;
+  height: 48px;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6d28d9,
+      #7c3aed
+    );
+
+  color: white;
+
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  transition: var(--veloop-transition);
+}
+
+.login-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 25px rgba(109, 40, 217, 0.3);
+}
+
+
+/* Create account */
+
+.create-account {
+  margin: 25px 0 0;
+
+  text-align: center;
+
+  color: var(--veloop-text-secondary);
+
+  font-size: 13px;
+}
+
+.create-account button {
+  border: 0;
+
+  background: transparent;
+
+  color: var(--veloop-primary);
+
+  font-weight: 600;
+
+  margin-left: 5px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+  .auth-container {
+    grid-template-columns: 1fr;
+
+    width: min(700px, 92%);
+
+    gap: 10px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+}
+
+@media (max-width: 575px) {
+
+  .auth-container {
+    width: 100%;
+
+    padding: 10px 16px 40px;
+  }
+
+  .auth-card {
+    padding: 24px 18px;
+
+    border-radius: 20px;
+  }
+
+  .login-page h2 {
+    font-size: 25px;
+  }
+
+  .auth-tabs button {
+    font-size: 11px;
+  }
+
+}
