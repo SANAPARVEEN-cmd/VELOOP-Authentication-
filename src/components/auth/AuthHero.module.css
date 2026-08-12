@@ -1,0 +1,170 @@
+.hero {
+  position: relative;
+  min-height: 620px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 60px 5%;
+
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(109, 40, 217, 0.08);
+  color: var(--veloop-primary);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -2.5px;
+  font-weight: 800;
+
+  color: var(--veloop-text);
+}
+
+.hero h1 span {
+  color: var(--veloop-primary);
+}
+
+.hero p {
+  max-width: 520px;
+
+  margin: 25px 0 35px;
+
+  color: var(--veloop-text-secondary);
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+}
+
+.statCard {
+  min-width: 130px;
+
+  padding: 18px 15px;
+
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: var(--veloop-radius-md);
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  box-shadow: var(--veloop-shadow-sm);
+
+  backdrop-filter: blur(10px);
+}
+
+.statCard svg {
+  color: var(--veloop-primary);
+}
+
+.statCard strong {
+  font-size: 21px;
+}
+
+.statCard span {
+  color: var(--veloop-text-muted);
+  font-size: 11px;
+}
+
+.heroGlow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: 5%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.25),
+      transparent 65%
+    );
+
+  filter: blur(15px);
+}
+
+@media (max-width: 991px) {
+  .hero {
+    min-height: auto;
+    padding: 50px 30px;
+  }
+
+  .heroContent {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero {
+    padding: 30px 20px 15px;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+    letter-spacing: -1.5px;
+  }
+
+  .hero p {
+    font-size: 15px;
+    margin: 18px 0 25px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .statCard {
+    min-width: 0;
+    flex: 1;
+    padding: 13px 10px;
+  }
+
+  .statCard strong {
+    font-size: 17px;
+  }
+
+  .statCard span {
+    font-size: 9px;
+  }
+}
