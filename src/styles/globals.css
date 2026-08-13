@@ -1,5 +1,5 @@
-@import './variables.css';
-@import './animations.css';
+@import "./variables.css";
+@import "./animations.css";
 * {
   box-sizing: border-box;
 }
@@ -70,22 +70,6 @@ a {
   padding: 30px 0 70px;
 }
 
-.auth-card {
-  background: rgba(255, 255, 255, 0.92);
-
-  border: 1px solid rgba(255, 255, 255, 0.8);
-
-  border-radius: 24px;
-
-  padding: 38px;
-
-  box-shadow:
-    0 20px 60px rgba(76, 29, 149, 0.12);
-
-  backdrop-filter: blur(20px);
-}
-
-
 /* =========================================
    LOGIN
 ========================================= */
@@ -108,7 +92,6 @@ a {
 
   font-size: 14px;
 }
-
 
 /* Tabs */
 
@@ -146,7 +129,7 @@ a {
 }
 
 .auth-tabs button.active::after {
-  content: '';
+  content: "";
 
   position: absolute;
 
@@ -158,7 +141,6 @@ a {
 
   background: var(--veloop-primary);
 }
-
 
 /* Form */
 
@@ -202,8 +184,7 @@ a {
 .input-wrapper:focus-within {
   border-color: var(--veloop-primary);
 
-  box-shadow:
-    0 0 0 3px rgba(109, 40, 217, 0.1);
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.1);
 }
 
 .input-wrapper input {
@@ -228,7 +209,6 @@ a {
 
   display: flex;
 }
-
 
 /* Login options */
 
@@ -263,7 +243,6 @@ a {
   font-size: 13px;
 }
 
-
 /* Login button */
 
 .login-button {
@@ -274,12 +253,7 @@ a {
 
   border-radius: 9px;
 
-  background:
-    linear-gradient(
-      90deg,
-      #6d28d9,
-      #7c3aed
-    );
+  background: linear-gradient(90deg, #6d28d9, #7c3aed);
 
   color: white;
 
@@ -297,10 +271,8 @@ a {
 .login-button:hover {
   transform: translateY(-1px);
 
-  box-shadow:
-    0 8px 25px rgba(109, 40, 217, 0.3);
+  box-shadow: 0 8px 25px rgba(109, 40, 217, 0.3);
 }
-
 
 /* Create account */
 
@@ -326,13 +298,11 @@ a {
   margin-left: 5px;
 }
 
-
 /* =========================================
    RESPONSIVE
 ========================================= */
 
 @media (max-width: 991px) {
-
   .auth-container {
     grid-template-columns: 1fr;
 
@@ -344,11 +314,9 @@ a {
   .hero {
     min-height: auto;
   }
-
 }
 
 @media (max-width: 575px) {
-
   .auth-container {
     width: 100%;
 
@@ -361,6 +329,16 @@ a {
     border-radius: 20px;
   }
 
+  .auth-card {
+    overflow: hidden;
+  }
+
+  .login-page {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .login-page h2 {
     font-size: 25px;
   }
@@ -368,5 +346,130 @@ a {
   .auth-tabs button {
     font-size: 11px;
   }
+}
+/* =========================================
+   OTP INPUT
+========================================= */
 
+.otp-input-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.otp-input {
+  width: 52px !important;
+  min-width: 52px !important;
+  max-width: 52px !important;
+
+  height: 58px !important;
+  min-height: 58px !important;
+  max-height: 58px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: 1px solid #ddd7eb !important;
+  border-radius: 12px !important;
+
+  background: #ffffff !important;
+
+  text-align: center !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+
+  color: #171329 !important;
+
+  outline: none !important;
+
+  box-sizing: border-box !important;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.otp-input:focus {
+  border-color: #6d28d9 !important;
+
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.12) !important;
+
+  transform: translateY(-1px);
+}
+
+.otp-input:hover {
+  border-color: #b8a9d9 !important;
+}
+
+/* Remove browser number arrows if browser treats it as number */
+.otp-input::-webkit-outer-spin-button,
+.otp-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* =========================================
+   OTP LOGIN
+========================================= */
+
+.otp-login {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.otp-login h3 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #11101d;
+}
+
+.otp-login > p {
+  margin: 0 auto;
+  max-width: 420px;
+  color: #686579;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.otp-login .form-group {
+  text-align: left;
+  margin-top: 25px;
+}
+
+.otp-login .login-button {
+  width: 100%;
+  margin-top: 10px;
+}
+@media (max-width: 576px) {
+  .otp-input-container {
+    gap: 7px;
+    margin: 22px 0;
+  }
+
+  .otp-input {
+    width: 43px !important;
+    min-width: 43px !important;
+    max-width: 43px !important;
+
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+
+    font-size: 19px !important;
+    border-radius: 10px !important;
+  }
+
+  .otp-login h3 {
+    font-size: 21px;
+  }
+
+  .otp-login > p {
+    font-size: 14px;
+  }
 }
