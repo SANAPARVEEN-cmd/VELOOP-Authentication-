@@ -1,170 +1,608 @@
 .hero {
   position: relative;
-  min-height: 620px;
+  min-height: 100%;
+  width: 100%;
+  padding: 28px 30px 20px;
+  box-sizing: border-box;
 
-  display: flex;
-  align-items: center;
-
-  padding: 60px 5%;
+  background:
+    radial-gradient(
+      circle at 65% 45%,
+      rgba(139, 67, 255, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #eee7ff 0%,
+      #f7f4ff 55%,
+      #eee6ff 100%
+    );
 
   overflow: hidden;
 }
 
-.heroContent {
-  position: relative;
-  z-index: 2;
-  max-width: 620px;
-}
 
-.badge {
-  display: inline-flex;
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+  display: flex;
   align-items: center;
-  gap: 8px;
-
-  padding: 8px 14px;
-
-  border-radius: 999px;
-
-  background: rgba(109, 40, 217, 0.08);
-  color: var(--veloop-primary);
-
-  font-size: 13px;
-  font-weight: 600;
-
-  margin-bottom: 22px;
+  gap: 12px;
+  position: relative;
+  z-index: 10;
 }
 
-.hero h1 {
+.logoMark {
+  width: 54px;
+  height: 54px;
+
+  border: 4px solid #111827;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoInner {
+  width: 27px;
+  height: 27px;
+
+  border: 4px solid #6d28d9;
+  border-radius: 50%;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoText strong {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #111827;
+}
+
+.logoText span {
+  margin-top: 6px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 6px;
+
+  color: #5b21b6;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.content {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 42% 58%;
+
+  min-height: 690px;
+
+  margin-top: 20px;
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.textContent {
+  position: relative;
+  z-index: 5;
+
+  align-self: center;
+
+  padding-left: 5px;
+  margin-top: -30px;
+}
+
+.textContent h1 {
   margin: 0;
 
-  font-size: clamp(42px, 5vw, 72px);
-  line-height: 1.04;
-  letter-spacing: -2.5px;
+  font-size: clamp(42px, 4vw, 62px);
+  line-height: 1.05;
+
+  font-weight: 900;
+  letter-spacing: -2px;
+
+  color: #080d1d;
+}
+
+.textContent h2 {
+  margin: 12px 0 16px;
+
+  font-size: 20px;
+  line-height: 1.3;
+
   font-weight: 800;
 
-  color: var(--veloop-text);
+  color: #5b21d6;
 }
 
-.hero h1 span {
-  color: var(--veloop-primary);
-}
+.textContent p {
+  max-width: 420px;
 
-.hero p {
-  max-width: 520px;
-
-  margin: 25px 0 35px;
-
-  color: var(--veloop-text-secondary);
+  margin: 0;
 
   font-size: 17px;
   line-height: 1.7;
+
+  color: #273449;
 }
 
-.stats {
-  display: flex;
-  gap: 12px;
-}
 
-.statCard {
-  min-width: 130px;
+/* =====================================================
+   VISUAL AREA
+===================================================== */
 
-  padding: 18px 15px;
+.visual {
+  position: relative;
 
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-
-  border-radius: var(--veloop-radius-md);
+  min-height: 500px;
 
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-
-  box-shadow: var(--veloop-shadow-sm);
-
-  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
 }
 
-.statCard svg {
-  color: var(--veloop-primary);
-}
 
-.statCard strong {
-  font-size: 21px;
-}
+/* Glow */
 
-.statCard span {
-  color: var(--veloop-text-muted);
-  font-size: 11px;
-}
-
-.heroGlow {
+.glow {
   position: absolute;
 
-  width: 500px;
-  height: 500px;
-
-  right: 5%;
-  top: 50%;
-
-  transform: translateY(-50%);
+  width: 390px;
+  height: 390px;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(139, 92, 246, 0.25),
-      transparent 65%
+      rgba(168, 85, 247, 0.35),
+      rgba(139, 92, 246, 0.08) 55%,
+      transparent 72%
     );
 
-  filter: blur(15px);
+  filter: blur(10px);
 }
 
-@media (max-width: 991px) {
-  .hero {
-    min-height: auto;
-    padding: 50px 30px;
+
+/* Circular reward ring */
+
+.rewardRing {
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  border-radius: 50%;
+
+  border: 24px solid rgba(139, 92, 246, 0.08);
+
+  border-top-color: rgba(139, 92, 246, 0.55);
+  border-left-color: rgba(236, 72, 153, 0.35);
+
+  transform: rotate(-25deg);
+}
+
+
+/* =====================================================
+   MAIN GIFT
+===================================================== */
+
+.giftImage {
+  position: relative;
+  z-index: 5;
+
+  width: min(390px, 80%);
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 25px 30px rgba(76, 29, 149, 0.25));
+
+  animation: floatingGift 4s ease-in-out infinite;
+}
+
+@keyframes floatingGift {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
 
-  .heroContent {
-    max-width: 100%;
-  }
-
-  .hero h1 {
-    font-size: 50px;
+  50% {
+    transform: translateY(-10px);
   }
 }
 
-@media (max-width: 575px) {
-  .hero {
-    padding: 30px 20px 15px;
+
+/* =====================================================
+   REWARD CARDS
+===================================================== */
+
+.rewardCard {
+  position: absolute;
+
+  width: 150px;
+
+  z-index: 8;
+
+  filter:
+    drop-shadow(
+      0 15px 20px rgba(76, 29, 149, 0.16)
+    );
+
+  transition: transform 0.3s ease;
+}
+
+.rewardCard:hover {
+  transform: translateY(-6px) rotate(0deg);
+}
+
+.amazonCard {
+  top: 8%;
+  left: 8%;
+
+  transform: rotate(8deg);
+}
+
+.paypalCard {
+  top: 35%;
+  right: 3%;
+
+  transform: rotate(-5deg);
+}
+
+.googleCard {
+  bottom: 5%;
+  right: 20%;
+
+  transform: rotate(8deg);
+}
+
+
+/* =====================================================
+   GEMS
+===================================================== */
+
+.gem {
+  position: absolute;
+
+  z-index: 7;
+
+  color: #7c3aed;
+
+  filter:
+    drop-shadow(
+      0 7px 10px rgba(124, 58, 237, 0.3)
+    );
+
+  animation: gemFloat 4s ease-in-out infinite;
+}
+
+.gemOne {
+  top: 5%;
+  right: 13%;
+}
+
+.gemTwo {
+  top: 25%;
+  left: 15%;
+
+  animation-delay: 0.7s;
+}
+
+.gemThree {
+  bottom: 20%;
+  left: 5%;
+
+  animation-delay: 1.2s;
+}
+
+@keyframes gemFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
   }
 
-  .hero h1 {
-    font-size: 39px;
-    letter-spacing: -1.5px;
+  50% {
+    transform: translateY(-8px) rotate(8deg);
+  }
+}
+
+
+/* =====================================================
+   COINS
+===================================================== */
+
+.coin {
+  position: absolute;
+
+  z-index: 7;
+
+  color: #f59e0b;
+
+  filter:
+    drop-shadow(
+      0 8px 12px rgba(245, 158, 11, 0.25)
+    );
+}
+
+.coinOne {
+  bottom: 16%;
+  left: 24%;
+}
+
+.coinTwo {
+  bottom: 8%;
+  left: 38%;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 42%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+.statCard {
+  min-height: 105px;
+
+  padding: 16px 12px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 10px 25px rgba(76, 29, 149, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  justify-content: center;
+}
+
+.statCard svg {
+  color: #7c3aed;
+
+  margin-bottom: 8px;
+}
+
+.statCard strong {
+  font-size: 20px;
+  color: #111827;
+}
+
+.statCard span {
+  margin-top: 3px;
+
+  font-size: 11px;
+
+  color: #5b6475;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   TRUST BAR
+===================================================== */
+
+.trustBar {
+  position: relative;
+  z-index: 10;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-top: -15px;
+
+  padding: 13px 15px;
+
+  border-radius: 14px;
+
+  background: rgba(216, 196, 255, 0.65);
+
+  backdrop-filter: blur(10px);
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.trustIcon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #6d28d9;
+}
+
+.trustItem strong {
+  display: block;
+
+  font-size: 12px;
+
+  color: #171225;
+}
+
+.trustItem span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 10px;
+
+  color: #5f5870;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  justify-content: flex-start;
+
+  margin-top: 18px;
+
+  font-size: 10px;
+
+  color: #4b5563;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .content {
+    grid-template-columns: 40% 60%;
   }
 
-  .hero p {
-    font-size: 15px;
-    margin: 18px 0 25px;
+  .textContent h1 {
+    font-size: 45px;
   }
 
-  .stats {
-    gap: 8px;
-  }
-
-  .statCard {
-    min-width: 0;
-    flex: 1;
-    padding: 13px 10px;
-  }
-
-  .statCard strong {
+  .textContent h2 {
     font-size: 17px;
   }
 
-  .statCard span {
-    font-size: 9px;
+  .textContent p {
+    font-size: 14px;
   }
+
+  .giftImage {
+    width: 320px;
+  }
+
+  .rewardRing {
+    width: 300px;
+    height: 300px;
+  }
+
+  .rewardCard {
+    width: 120px;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .hero {
+    padding: 22px;
+  }
+
+  .content {
+    display: block;
+    min-height: auto;
+  }
+
+  .textContent {
+    margin: 45px 0 20px;
+  }
+
+  .textContent h1 {
+    font-size: 42px;
+  }
+
+  .visual {
+    min-height: 430px;
+  }
+
+  .stats {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 15px;
+  }
+
+  .trustBar {
+    margin-top: 20px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .trustBar {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    min-height: 360px;
+  }
+
+  .giftImage {
+    width: 260px;
+  }
+
+  .rewardRing {
+    width: 240px;
+    height: 240px;
+  }
+
+  .rewardCard {
+    width: 95px;
+  }
+
 }
