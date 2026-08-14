@@ -14,5 +14,5 @@
     ),
     var(--veloop-background);
 
-  overflow: hidden;
+  /* overflow: hidden; */
 }

@@ -1,608 +1,679 @@
 .hero {
   position: relative;
-  min-height: 100%;
   width: 100%;
-  padding: 28px 30px 20px;
-  box-sizing: border-box;
+  height: 100%;
+
+  min-height: 760px;
+
+  padding: 45px 30px 25px;
+
+  display: flex;
+  flex-direction: column;
 
   background:
     radial-gradient(
-      circle at 65% 45%,
-      rgba(139, 67, 255, 0.18),
-      transparent 35%
+      circle at 65% 42%,
+      rgba(124, 58, 237, 0.16),
+      transparent 32%
     ),
     linear-gradient(
-      135deg,
+      145deg,
       #eee7ff 0%,
-      #f7f4ff 55%,
-      #eee6ff 100%
+      #f7f3ff 50%,
+      #eee8ff 100%
     );
 
-  overflow: hidden;
+  border-radius: 22px;
+
+  overflow: visible;
 }
 
 
-/* =====================================================
-   LOGO
-===================================================== */
+/* =========================================
+   HERO COPY
+========================================= */
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-  z-index: 10;
-}
-
-.logoMark {
-  width: 54px;
-  height: 54px;
-
-  border: 4px solid #111827;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logoInner {
-  width: 27px;
-  height: 27px;
-
-  border: 4px solid #6d28d9;
-  border-radius: 50%;
-}
-
-.logoText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.logoText strong {
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: -1px;
-  color: #111827;
-}
-
-.logoText span {
-  margin-top: 6px;
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 6px;
-
-  color: #5b21b6;
+.heroCopy {
+  width: 42%;        /* was 48% */
+  max-width: 400px;
 }
 
 
-/* =====================================================
-   MAIN CONTENT
-===================================================== */
+.heroCopy h1 {
+  margin: 0 0 12px;
 
-.content {
-  position: relative;
+  color: #0f1020;
 
-  display: grid;
-  grid-template-columns: 42% 58%;
+  font-size: clamp(42px, 4vw, 58px);
 
-  min-height: 690px;
-
-  margin-top: 20px;
-}
-
-
-/* =====================================================
-   TEXT
-===================================================== */
-
-.textContent {
-  position: relative;
-  z-index: 5;
-
-  align-self: center;
-
-  padding-left: 5px;
-  margin-top: -30px;
-}
-
-.textContent h1 {
-  margin: 0;
-
-  font-size: clamp(42px, 4vw, 62px);
-  line-height: 1.05;
-
-  font-weight: 900;
-  letter-spacing: -2px;
-
-  color: #080d1d;
-}
-
-.textContent h2 {
-  margin: 12px 0 16px;
-
-  font-size: 20px;
-  line-height: 1.3;
+  line-height: 0.95;
 
   font-weight: 800;
 
-  color: #5b21d6;
+  letter-spacing: -2px;
 }
 
-.textContent p {
-  max-width: 420px;
+.heroCopy h2 {
+  margin: 0 0 18px;
 
+  color: #6420d7;
+
+  font-size: 20px;
+
+  line-height: 1.3;
+
+  font-weight: 750;
+}
+
+.heroCopy p {
   margin: 0;
 
-  font-size: 17px;
-  line-height: 1.7;
+  max-width: 390px;
 
-  color: #273449;
+  color: #171528;
+
+  font-size: 16px;
+
+  line-height: 1.65;
 }
 
 
-/* =====================================================
-   VISUAL AREA
-===================================================== */
+/* =========================================
+   REWARD STAGE
+========================================= */
 
-.visual {
-  position: relative;
-
-  min-height: 500px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* Glow */
-
-.glow {
+.rewardStage {
   position: absolute;
 
-  width: 390px;
-  height: 390px;
+  width: 530px;
+  height: 480px;
+
+  right: -10px;
+  top: 170px;
+
+  z-index: 3;
+}
+
+
+/* =========================================
+   MAIN GLOW
+========================================= */
+
+.mainGlow {
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(168, 85, 247, 0.35),
-      rgba(139, 92, 246, 0.08) 55%,
-      transparent 72%
+      rgba(139, 92, 246, 0.32),
+      rgba(139, 92, 246, 0.12) 45%,
+      transparent 70%
     );
 
-  filter: blur(10px);
+  filter: blur(8px);
 }
 
 
-/* Circular reward ring */
+/* =========================================
+   REWARD RING
+========================================= */
 
 .rewardRing {
   position: absolute;
+  width: 380px;
+  height: 380px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: none; /* delete the border approach entirely */
+  background: conic-gradient(
+    from 200deg,
+    rgba(255, 184, 140, 0.55),
+    rgba(255, 140, 170, 0.45) 25%,
+    rgba(139, 92, 246, 0.35) 55%,
+    transparent 78%
+  );
+  filter: blur(28px);
+  animation: rotateRing 16s linear infinite;
+}
 
-  width: 360px;
-  height: 360px;
+.ringAccent {
+  display: none; /* the hard white outline ring isn't in the reference — drop it */
+}
+
+.ringAccent {
+  position: absolute;
+
+  inset: -4px;
 
   border-radius: 50%;
 
-  border: 24px solid rgba(139, 92, 246, 0.08);
-
-  border-top-color: rgba(139, 92, 246, 0.55);
-  border-left-color: rgba(236, 72, 153, 0.35);
-
-  transform: rotate(-25deg);
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 
-/* =====================================================
-   MAIN GIFT
-===================================================== */
+/* =========================================
+   GIFT
+========================================= */
 
 .giftImage {
-  position: relative;
-  z-index: 5;
-
-  width: min(390px, 80%);
-  height: auto;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(0 25px 30px rgba(76, 29, 149, 0.25));
-
-  animation: floatingGift 4s ease-in-out infinite;
-}
-
-@keyframes floatingGift {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-
-/* =====================================================
-   REWARD CARDS
-===================================================== */
-
-.rewardCard {
   position: absolute;
 
-  width: 150px;
+  width: 250px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
 
   z-index: 8;
 
   filter:
-    drop-shadow(
-      0 15px 20px rgba(76, 29, 149, 0.16)
-    );
+    drop-shadow(0 25px 25px rgba(80, 32, 160, 0.25));
 
-  transition: transform 0.3s ease;
+  animation: giftFloat 5s ease-in-out infinite;
 }
 
-.rewardCard:hover {
-  transform: translateY(-6px) rotate(0deg);
+
+/* =========================================
+   REWARD CARDS
+========================================= */
+
+.rewardCard {
+  position: absolute;
+
+  width: 145px;
+
+  z-index: 12;
+
+  filter:
+    drop-shadow(0 15px 20px rgba(70, 30, 140, 0.18));
+
+  transition:
+    transform 0.3s ease;
 }
 
 .amazonCard {
-  top: 8%;
-  left: 8%;
+  top: 10px;
+  left: 35px;
 
-  transform: rotate(8deg);
+  transform: rotate(-8deg);
 }
 
 .paypalCard {
-  top: 35%;
-  right: 3%;
+  top: 155px;
+  right: 0;
 
-  transform: rotate(-5deg);
+  transform: rotate(7deg);
 }
 
 .googleCard {
-  bottom: 5%;
-  right: 20%;
+  bottom: 5px;
+  right: 90px;
 
-  transform: rotate(8deg);
+  transform: rotate(7deg);
 }
 
 
-/* =====================================================
+/* =========================================
    GEMS
-===================================================== */
+========================================= */
 
 .gem {
   position: absolute;
 
-  z-index: 7;
+  z-index: 15;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   color: #7c3aed;
 
   filter:
-    drop-shadow(
-      0 7px 10px rgba(124, 58, 237, 0.3)
-    );
+    drop-shadow(0 7px 10px rgba(124, 58, 237, 0.35));
 
-  animation: gemFloat 4s ease-in-out infinite;
+  animation: floatingGem 4s ease-in-out infinite;
 }
 
 .gemOne {
-  top: 5%;
-  right: 13%;
+  top: 0;
+  right: 125px;
 }
 
 .gemTwo {
-  top: 25%;
-  left: 15%;
+  top: 105px;
+  left: 20px;
 
   animation-delay: 0.7s;
 }
 
 .gemThree {
-  bottom: 20%;
-  left: 5%;
+  bottom: 115px;
+  left: 65px;
 
   animation-delay: 1.2s;
 }
 
-@keyframes gemFloat {
 
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-8px) rotate(8deg);
-  }
-}
-
-
-/* =====================================================
+/* =========================================
    COINS
-===================================================== */
+========================================= */
 
 .coin {
   position: absolute;
 
-  z-index: 7;
+  z-index: 14;
+
+  display: flex;
 
   color: #f59e0b;
 
   filter:
-    drop-shadow(
-      0 8px 12px rgba(245, 158, 11, 0.25)
-    );
+    drop-shadow(0 8px 10px rgba(245, 158, 11, 0.28));
+
+  animation: floatingCoin 4.5s ease-in-out infinite;
 }
 
 .coinOne {
-  bottom: 16%;
-  left: 24%;
+  bottom: 45px;
+  left: 155px;
 }
 
 .coinTwo {
-  bottom: 8%;
-  left: 38%;
+  bottom: 10px;
+  left: 245px;
+
+  animation-delay: 1s;
 }
 
 
-/* =====================================================
-   STATS
-===================================================== */
+/* =========================================
+   STATISTICS
+========================================= */
 
 .stats {
-  position: absolute;
+  position: relative;
 
-  left: 0;
-  bottom: 0;
+  z-index: 20;
 
-  width: 42%;
+  width: 58%;
+
+  margin-top: auto;
 
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
   gap: 10px;
 }
 
 .statCard {
-  min-height: 105px;
+  min-height: 108px;
 
-  padding: 16px 12px;
-
-  border-radius: 14px;
-
-  background: rgba(255, 255, 255, 0.82);
-
-  border: 1px solid rgba(255, 255, 255, 0.9);
-
-  box-shadow:
-    0 10px 25px rgba(76, 29, 149, 0.08);
+  padding: 15px 12px;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 
   justify-content: center;
-}
 
-.statCard svg {
-  color: #7c3aed;
+  gap: 5px;
 
-  margin-bottom: 8px;
-}
+  background: rgba(255, 255, 255, 0.86);
 
-.statCard strong {
-  font-size: 20px;
-  color: #111827;
-}
-
-.statCard span {
-  margin-top: 3px;
-
-  font-size: 11px;
-
-  color: #5b6475;
-
-  white-space: nowrap;
-}
-
-
-/* =====================================================
-   TRUST BAR
-===================================================== */
-
-.trustBar {
-  position: relative;
-  z-index: 10;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 10px;
-
-  margin-top: -15px;
-
-  padding: 13px 15px;
+  border: 1px solid rgba(124, 58, 237, 0.08);
 
   border-radius: 14px;
 
-  background: rgba(216, 196, 255, 0.65);
+  box-shadow:
+    0 10px 25px rgba(60, 30, 120, 0.06);
 
   backdrop-filter: blur(10px);
 }
 
+.statCard svg {
+  color: #7c3aed;
+}
+
+.statCard strong {
+  display: block;
+
+  color: #121222;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+.statCard span {
+  color: #696579;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   TRUST BAR
+========================================= */
+
+.trustBar {
+  position: relative;
+
+  z-index: 20;
+
+  margin-top: 12px;
+
+  width: 100%;
+
+  min-height: 85px;
+
+  padding: 12px 15px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+
+  background: rgba(216, 195, 255, 0.72);
+
+  border-radius: 14px;
+
+  backdrop-filter: blur(12px);
+}
+
 .trustItem {
   display: flex;
+
   align-items: center;
 
   gap: 10px;
+
+  padding: 5px;
 }
 
 .trustIcon {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
 
   flex-shrink: 0;
-
-  border-radius: 50%;
-
-  background: rgba(255, 255, 255, 0.8);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: #6d28d9;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: #7c3aed;
 }
 
 .trustItem strong {
   display: block;
 
-  font-size: 12px;
+  margin-bottom: 3px;
 
-  color: #171225;
+  color: #171329;
+
+  font-size: 12px;
 }
 
 .trustItem span {
   display: block;
 
-  margin-top: 3px;
+  color: #706b7e;
 
   font-size: 10px;
 
-  color: #5f5870;
+  line-height: 1.35;
 }
 
 
-/* =====================================================
-   FOOTER
-===================================================== */
+/* =========================================
+   ANIMATIONS
+========================================= */
 
-.footer {
-  position: relative;
-  z-index: 10;
-
-  display: flex;
-  justify-content: flex-start;
-
-  margin-top: 18px;
-
-  font-size: 10px;
-
-  color: #4b5563;
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width: 1100px) {
-
-  .content {
-    grid-template-columns: 40% 60%;
+@keyframes rotateRing {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
-  .textContent h1 {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes giftFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  50% {
+    transform: translate(-50%, calc(-50% - 10px));
+  }
+}
+
+@keyframes floatingGem {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes floatingCoin {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(4deg);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .hero {
+    padding: 35px 24px 20px;
+  }
+
+  .heroCopy {
+    width: 46%;
+  }
+
+  .heroCopy h1 {
     font-size: 45px;
   }
 
-  .textContent h2 {
+  .heroCopy h2 {
     font-size: 17px;
   }
 
-  .textContent p {
+  .heroCopy p {
     font-size: 14px;
   }
 
+  .rewardStage {
+  width: 530px;
+  height: 480px;
+  right: -10px;   /* pushes it OUTSIDE .hero's right edge */
+  top: 170px;
+}
+
   .giftImage {
-    width: 320px;
+    width: 215px;
   }
 
   .rewardRing {
-    width: 300px;
-    height: 300px;
+    width: 310px;
+    height: 310px;
   }
 
-  .rewardCard {
-    width: 120px;
+  .stats {
+    width: 62%;
   }
 
+  .trustItem {
+    gap: 7px;
+  }
 }
 
 
-@media (max-width: 800px) {
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 991px) {
 
   .hero {
-    padding: 22px;
+    min-height: 680px;
+
+    padding: 35px 24px 20px;
+
+    border-radius: 20px;
   }
 
-  .content {
-    display: block;
-    min-height: auto;
+  .heroCopy {
+    width: 100%;
+
+    max-width: 500px;
+
+    margin-top: 20px;
+
+    text-align: center;
   }
 
-  .textContent {
-    margin: 45px 0 20px;
-  }
-
-  .textContent h1 {
+  .heroCopy h1 {
     font-size: 42px;
   }
 
-  .visual {
-    min-height: 430px;
+  .heroCopy p {
+    margin: 0 auto;
   }
 
-  .stats {
+  .rewardStage {
     position: relative;
 
     width: 100%;
+    height: 350px;
 
-    margin-top: 15px;
+    right: auto;
+    top: auto;
+
+    margin-top: 10px;
+  }
+
+  .stats {
+    width: 100%;
   }
 
   .trustBar {
-    margin-top: 20px;
+    width: 100%;
   }
-
 }
 
 
-@media (max-width: 550px) {
+@media (max-width: 575px) {
+
+  .hero {
+    min-height: 0;
+
+    padding: 25px 15px 15px;
+  }
+
+  .heroCopy h1 {
+    font-size: 34px;
+  }
+
+  .heroCopy h2 {
+    font-size: 16px;
+  }
+
+  .heroCopy p {
+    font-size: 14px;
+  }
+
+  .rewardStage {
+    height: 300px;
+  }
+
+  .rewardRing {
+    width: 230px;
+    height: 230px;
+
+    border-width: 18px;
+  }
+
+  .giftImage {
+    width: 165px;
+  }
+
+  .rewardCard {
+    width: 105px;
+  }
+
+  .amazonCard {
+    left: 0;
+  }
+
+  .paypalCard {
+    right: 0;
+  }
+
+  .googleCard {
+    right: 50px;
+  }
 
   .stats {
-    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .statCard {
+    min-height: 90px;
+
+    padding: 10px 6px;
+
+    text-align: center;
+
+    align-items: center;
+  }
+
+  .statCard strong {
+    font-size: 18px;
+  }
+
+  .statCard span {
+    font-size: 10px;
   }
 
   .trustBar {
     grid-template-columns: 1fr;
-  }
 
-  .visual {
-    min-height: 360px;
+    padding: 12px;
   }
-
-  .giftImage {
-    width: 260px;
-  }
-
-  .rewardRing {
-    width: 240px;
-    height: 240px;
-  }
-
-  .rewardCard {
-    width: 95px;
-  }
-
 }
