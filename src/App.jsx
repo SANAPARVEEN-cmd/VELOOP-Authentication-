@@ -4,17 +4,11 @@ import AuthLayout from './components/auth/AuthLayout';
 import AuthHeader from './components/auth/AuthHeader';
 import AuthHero from './components/auth/AuthHero';
 import AuthCard from './components/auth/AuthCard';
+import AuthFooter from './components/auth/AuthFooter';
 
 import Login from './pages/Login';
-
-// Temporary placeholder pages
-function Register() {
-  return <div>Register Page</div>;
-}
-
-function ForgotPassword() {
-  return <div>Forgot Password Page</div>;
-}
+import Register from './pages/Register';
+import ForgotPassword from './pages/ForgotPassword';
 
 function App() {
   return (
@@ -32,7 +26,7 @@ function App() {
 
               <main className="auth-container">
 
-                <AuthHero />
+                <AuthHero variant="login" />
 
                 <AuthCard>
                   <Login />
@@ -40,20 +34,58 @@ function App() {
 
               </main>
 
+              <AuthFooter />
+
             </AuthLayout>
           }
         />
 
-        {/* REGISTER - temporary */}
+        {/* REGISTER */}
         <Route
           path="/register"
-          element={<Register />}
+          element={
+            <AuthLayout>
+
+              <AuthHeader />
+
+              <main className="auth-container">
+
+                <AuthHero variant="register" />
+
+                <AuthCard>
+                  <Register />
+                </AuthCard>
+
+              </main>
+
+              <AuthFooter />
+
+            </AuthLayout>
+          }
         />
 
-        {/* FORGOT PASSWORD - temporary */}
+        {/* FORGOT PASSWORD */}
         <Route
           path="/forgot-password"
-          element={<ForgotPassword />}
+          element={
+            <AuthLayout>
+
+              <AuthHeader />
+
+              <main className="auth-container">
+
+                <AuthHero variant="forgotPassword" />
+
+                <AuthCard>
+                  <ForgotPassword />
+                </AuthCard>
+
+              </main>
+
+              <AuthFooter />
+
+            </AuthLayout>
+          }
         />
 
         {/* DEFAULT ROUTE */}

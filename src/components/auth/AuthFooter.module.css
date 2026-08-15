@@ -1,0 +1,121 @@
+.footer {
+  position: relative;
+
+  z-index: 25;
+
+  width: 100%;
+
+  padding: 24px 20px;
+
+  margin-top: 20px;
+
+  border-top: 1px solid rgba(124, 58, 237, 0.1);
+
+  background: rgba(255, 255, 255, 0.5);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 0 0 14px 14px;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  color: var(--veloop-text-muted);
+}
+
+.footerContent {
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+}
+
+.footerContent span {
+  display: block;
+
+  width: 100%;
+
+  font-size: 12px;
+
+  color: var(--veloop-text-muted);
+}
+
+.footerLinks {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 8px;
+}
+
+.footerLink {
+  border: none;
+
+  background: none;
+
+  color: var(--veloop-primary);
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+
+  font-size: 12px;
+
+  padding: 0;
+
+  font-weight: 500;
+}
+
+.footerLink:hover {
+  color: var(--veloop-primary-light);
+
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 18px 14px;
+
+    margin-top: 16px;
+
+    border-radius: 0;
+
+    font-size: 11px;
+  }
+
+  .footerContent {
+    gap: 4px;
+  }
+
+  .footerContent span:first-child {
+    font-size: 11px;
+
+    margin-bottom: 8px;
+  }
+
+  .footerLink {
+    font-size: 11px;
+  }
+
+  .footerLinks {
+    font-size: 10px;
+
+    gap: 4px;
+  }
+}

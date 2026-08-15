@@ -1,102 +1,116 @@
+/* =========================================
+   HERO SECTION - BASE
+========================================= */
+
 .hero {
   position: relative;
   width: 100%;
   height: 100%;
 
-  min-height: 760px;
-
-  padding: 45px 30px 25px;
-
   display: flex;
   flex-direction: column;
 
-  background:
-    radial-gradient(
-      circle at 65% 42%,
-      rgba(124, 58, 237, 0.16),
-      transparent 32%
-    ),
-    linear-gradient(
-      145deg,
-      #eee7ff 0%,
-      #f7f3ff 50%,
-      #eee8ff 100%
-    );
-
-  border-radius: 22px;
+  background: transparent;
 
   overflow: visible;
 }
 
-
 /* =========================================
-   HERO COPY
+   HERO COPY (Heading + Description)
 ========================================= */
 
 .heroCopy {
-  width: 42%;        /* was 48% */
-  max-width: 400px;
+  width: 100%;
+  max-width: 100%;
+  
+  margin-bottom: 24px;
 }
-
 
 .heroCopy h1 {
   margin: 0 0 12px;
 
   color: #0f1020;
 
-  font-size: clamp(42px, 4vw, 58px);
+  font-size: clamp(36px, 4vw, 52px);
 
-  line-height: 0.95;
+  line-height: 1.1;
 
   font-weight: 800;
 
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
 }
 
 .heroCopy h2 {
-  margin: 0 0 18px;
+  margin: 0 0 14px;
 
   color: #6420d7;
 
-  font-size: 20px;
+  font-size: clamp(18px, 2.5vw, 22px);
 
   line-height: 1.3;
 
-  font-weight: 750;
+  font-weight: 700;
 }
 
 .heroCopy p {
   margin: 0;
 
-  max-width: 390px;
+  max-width: 100%;
 
-  color: #171528;
+  color: #3d3548;
 
-  font-size: 16px;
+  font-size: clamp(14px, 1.8vw, 16px);
 
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
-
 /* =========================================
-   REWARD STAGE
+   HERO STAGE - Illustration Container
+   Uses flex layout to avoid absolute 
+   positioning overlap issues
 ========================================= */
 
-.rewardStage {
-  position: absolute;
+.heroStage {
+  position: relative;
 
-  width: 530px;
-  height: 480px;
+  width: 100%;
+  height: auto;
 
-  right: -10px;
-  top: 170px;
+  min-height: 380px;
 
-  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 12px 0 20px;
 }
 
+/* =========================================
+   LOGIN VARIANT - Larger illustration
+========================================= */
+
+.login .heroStage {
+  min-height: 420px;
+}
 
 /* =========================================
-   MAIN GLOW
+   REGISTER VARIANT
+========================================= */
+
+.register .heroStage {
+  min-height: 400px;
+}
+
+/* =========================================
+   FORGOT PASSWORD VARIANT - Slightly larger
+========================================= */
+
+.forgotPassword .heroStage {
+  min-height: 440px;
+}
+
+/* =========================================
+   MAIN GLOW (Decorative background)
 ========================================= */
 
 .mainGlow {
@@ -121,22 +135,27 @@
     );
 
   filter: blur(8px);
+
+  z-index: 1;
 }
 
-
 /* =========================================
-   REWARD RING
+   HERO RING (Decorative)
 ========================================= */
 
-.rewardRing {
+.heroRing {
   position: absolute;
+
   width: 380px;
   height: 380px;
+
   left: 50%;
   top: 50%;
+
   transform: translate(-50%, -50%);
+
   border-radius: 50%;
-  border: none; /* delete the border approach entirely */
+
   background: conic-gradient(
     from 200deg,
     rgba(255, 184, 140, 0.55),
@@ -144,90 +163,74 @@
     rgba(139, 92, 246, 0.35) 55%,
     transparent 78%
   );
+
   filter: blur(28px);
+
   animation: rotateRing 16s linear infinite;
+
+  z-index: 2;
 }
-
-.ringAccent {
-  display: none; /* the hard white outline ring isn't in the reference — drop it */
-}
-
-.ringAccent {
-  position: absolute;
-
-  inset: -4px;
-
-  border-radius: 50%;
-
-  border: 2px solid rgba(255, 255, 255, 0.5);
-}
-
 
 /* =========================================
-   GIFT
+   MAIN ILLUSTRATION - LARGE & PROMINENT
 ========================================= */
 
-.giftImage {
-  position: absolute;
+.mainIllustration {
+  position: relative;
 
-  width: 250px;
+  width: min(90%, 520px);
+  height: auto;
 
-  left: 50%;
-  top: 50%;
+  max-width: 100%;
 
-  transform: translate(-50%, -50%);
+  object-fit: contain;
 
   z-index: 8;
 
-  filter:
-    drop-shadow(0 25px 25px rgba(80, 32, 160, 0.25));
+  filter: drop-shadow(0 30px 50px rgba(80, 32, 160, 0.25));
 
-  animation: giftFloat 5s ease-in-out infinite;
+  animation: illustrationFloat 5s ease-in-out infinite;
 }
 
-
 /* =========================================
-   REWARD CARDS
+   FLOATING CARDS (Login only)
 ========================================= */
 
-.rewardCard {
+.floatingCard {
   position: absolute;
 
-  width: 145px;
+  width: min(160px, 28%);
 
   z-index: 12;
 
-  filter:
-    drop-shadow(0 15px 20px rgba(70, 30, 140, 0.18));
+  filter: drop-shadow(0 20px 30px rgba(70, 30, 140, 0.22));
 
-  transition:
-    transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .amazonCard {
-  top: 10px;
-  left: 35px;
+  top: 8%;
+  left: 2%;
 
   transform: rotate(-8deg);
 }
 
 .paypalCard {
-  top: 155px;
-  right: 0;
+  top: 45%;
+  right: 3%;
 
   transform: rotate(7deg);
 }
 
 .googleCard {
-  bottom: 5px;
-  right: 90px;
+  bottom: 10%;
+  right: 15%;
 
   transform: rotate(7deg);
 }
 
-
 /* =========================================
-   GEMS
+   GEMS (Decorative)
 ========================================= */
 
 .gem {
@@ -241,34 +244,53 @@
 
   color: #7c3aed;
 
-  filter:
-    drop-shadow(0 7px 10px rgba(124, 58, 237, 0.35));
+  filter: drop-shadow(0 7px 10px rgba(124, 58, 237, 0.35));
 
   animation: floatingGem 4s ease-in-out infinite;
 }
 
 .gemOne {
-  top: 0;
-  right: 125px;
+  top: 5%;
+  right: 12%;
 }
 
 .gemTwo {
-  top: 105px;
-  left: 20px;
+  top: 35%;
+  left: 3%;
 
   animation-delay: 0.7s;
 }
 
 .gemThree {
-  bottom: 115px;
-  left: 65px;
+  bottom: 15%;
+  left: 8%;
 
   animation-delay: 1.2s;
 }
 
+.registerGemOne {
+  top: 8%;
+  right: 8%;
+
+  animation-delay: 0.5s;
+}
+
+.securityGemOne {
+  top: 12%;
+  left: 5%;
+
+  animation-delay: 0.3s;
+}
+
+.securityGemTwo {
+  bottom: 18%;
+  right: 6%;
+
+  animation-delay: 0.9s;
+}
 
 /* =========================================
-   COINS
+   COINS (Decorative)
 ========================================= */
 
 .coin {
@@ -280,24 +302,110 @@
 
   color: #f59e0b;
 
-  filter:
-    drop-shadow(0 8px 10px rgba(245, 158, 11, 0.28));
+  filter: drop-shadow(0 8px 10px rgba(245, 158, 11, 0.28));
 
   animation: floatingCoin 4.5s ease-in-out infinite;
 }
 
 .coinOne {
-  bottom: 45px;
-  left: 155px;
+  bottom: 12%;
+  left: 18%;
 }
 
 .coinTwo {
-  bottom: 10px;
-  left: 245px;
+  bottom: 8%;
+  left: 30%;
 
   animation-delay: 1s;
 }
 
+.registerCoinOne {
+  top: 15%;
+  left: 4%;
+
+  animation-delay: 0.2s;
+}
+
+.registerCoinTwo {
+  bottom: 20%;
+  right: 5%;
+
+  animation-delay: 0.8s;
+}
+
+.registerCoinThree {
+  top: 40%;
+  right: 8%;
+
+  animation-delay: 1.2s;
+}
+
+/* =========================================
+   SHIELD (Register)
+========================================= */
+
+.shield {
+  position: absolute;
+
+  width: 80px;
+  height: 80px;
+
+  left: 50%;
+  bottom: 8%;
+
+  transform: translateX(-50%);
+
+  z-index: 10;
+
+  color: #7c3aed;
+
+  filter: drop-shadow(0 12px 20px rgba(124, 58, 237, 0.3));
+
+  animation: shieldGlow 3s ease-in-out infinite;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================
+   SPARKLES (Forgot Password)
+========================================= */
+
+.sparkle {
+  position: absolute;
+
+  font-size: 20px;
+
+  color: #fcd34d;
+
+  filter: drop-shadow(0 4px 8px rgba(252, 211, 77, 0.3));
+
+  animation: twinkle 2s ease-in-out infinite;
+
+  z-index: 7;
+}
+
+.sparkleOne {
+  top: 8%;
+  right: 10%;
+}
+
+.sparkleTwo {
+  bottom: 25%;
+  left: 6%;
+
+  animation-delay: 0.6s;
+}
+
+.sparkleThree {
+  top: 45%;
+  right: 12%;
+
+  animation-delay: 1.2s;
+
+  font-size: 16px;
+}
 
 /* =========================================
    STATISTICS
@@ -308,37 +416,38 @@
 
   z-index: 20;
 
-  width: 58%;
-
-  margin-top: auto;
+  width: 100%;
 
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 10px;
+  gap: 12px;
+
+  margin-bottom: 16px;
 }
 
 .statCard {
-  min-height: 108px;
+  min-height: 100px;
 
-  padding: 15px 12px;
+  padding: 14px 12px;
 
   display: flex;
   flex-direction: column;
 
   justify-content: center;
+  align-items: center;
+  text-align: center;
 
-  gap: 5px;
+  gap: 6px;
 
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.88);
 
-  border: 1px solid rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.1);
 
   border-radius: 14px;
 
-  box-shadow:
-    0 10px 25px rgba(60, 30, 120, 0.06);
+  box-shadow: 0 8px 20px rgba(60, 30, 120, 0.05);
 
   backdrop-filter: blur(10px);
 }
@@ -352,7 +461,7 @@
 
   color: #121222;
 
-  font-size: 22px;
+  font-size: 20px;
 
   line-height: 1;
 
@@ -362,12 +471,14 @@
 .statCard span {
   color: #696579;
 
-  font-size: 12px;
+  font-size: 11px;
+
+  font-weight: 500;
 }
 
-
 /* =========================================
-   TRUST BAR
+   TRUST INDICATORS - CRITICAL FIX
+   Positioned at bottom to prevent overlap
 ========================================= */
 
 .trustBar {
@@ -375,21 +486,17 @@
 
   z-index: 20;
 
-  margin-top: 12px;
-
   width: 100%;
 
-  min-height: 85px;
-
-  padding: 12px 15px;
+  padding: 14px 14px;
 
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 8px;
+  gap: 10px;
 
-  background: rgba(216, 195, 255, 0.72);
+  background: rgba(216, 195, 255, 0.7);
 
   border-radius: 14px;
 
@@ -403,12 +510,12 @@
 
   gap: 10px;
 
-  padding: 5px;
+  padding: 4px;
 }
 
 .trustIcon {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
 
   flex-shrink: 0;
 
@@ -418,7 +525,7 @@
 
   border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.8);
 
   color: #7c3aed;
 }
@@ -426,11 +533,13 @@
 .trustItem strong {
   display: block;
 
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 
   color: #171329;
 
   font-size: 12px;
+
+  font-weight: 600;
 }
 
 .trustItem span {
@@ -442,7 +551,6 @@
 
   line-height: 1.35;
 }
-
 
 /* =========================================
    ANIMATIONS
@@ -458,14 +566,14 @@
   }
 }
 
-@keyframes giftFloat {
+@keyframes illustrationFloat {
   0%,
   100% {
-    transform: translate(-50%, -50%);
+    transform: translateY(0);
   }
 
   50% {
-    transform: translate(-50%, calc(-50% - 10px));
+    transform: translateY(-12px);
   }
 }
 
@@ -476,7 +584,7 @@
   }
 
   50% {
-    transform: translateY(-9px);
+    transform: translateY(-8px);
   }
 }
 
@@ -487,184 +595,151 @@
   }
 
   50% {
-    transform: translateY(-8px) rotate(4deg);
+    transform: translateY(-7px) rotate(4deg);
   }
 }
 
+@keyframes shieldGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 12px 20px rgba(124, 58, 237, 0.3));
+  }
+
+  50% {
+    filter: drop-shadow(0 16px 28px rgba(124, 58, 237, 0.5));
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.4;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.1);
+  }
+}
 
 /* =========================================
-   TABLET
+   RESPONSIVE - TABLET (1024px)
 ========================================= */
 
-@media (max-width: 1200px) {
-
-  .hero {
-    padding: 35px 24px 20px;
-  }
-
-  .heroCopy {
-    width: 46%;
-  }
-
+@media (max-width: 1024px) {
   .heroCopy h1 {
-    font-size: 45px;
+    font-size: 40px;
   }
 
   .heroCopy h2 {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .heroCopy p {
-    font-size: 14px;
+    font-size: 15px;
   }
 
-  .rewardStage {
-  width: 530px;
-  height: 480px;
-  right: -10px;   /* pushes it OUTSIDE .hero's right edge */
-  top: 170px;
-}
-
-  .giftImage {
-    width: 215px;
-  }
-
-  .rewardRing {
-    width: 310px;
-    height: 310px;
+  .mainIllustration {
+    width: min(85%, 450px);
   }
 
   .stats {
-    width: 62%;
-  }
-
-  .trustItem {
-    gap: 7px;
-  }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 991px) {
-
-  .hero {
-    min-height: 680px;
-
-    padding: 35px 24px 20px;
-
-    border-radius: 20px;
-  }
-
-  .heroCopy {
-    width: 100%;
-
-    max-width: 500px;
-
-    margin-top: 20px;
-
-    text-align: center;
-  }
-
-  .heroCopy h1 {
-    font-size: 42px;
-  }
-
-  .heroCopy p {
-    margin: 0 auto;
-  }
-
-  .rewardStage {
-    position: relative;
-
-    width: 100%;
-    height: 350px;
-
-    right: auto;
-    top: auto;
-
-    margin-top: 10px;
-  }
-
-  .stats {
-    width: 100%;
-  }
-
-  .trustBar {
-    width: 100%;
-  }
-}
-
-
-@media (max-width: 575px) {
-
-  .hero {
-    min-height: 0;
-
-    padding: 25px 15px 15px;
-  }
-
-  .heroCopy h1 {
-    font-size: 34px;
-  }
-
-  .heroCopy h2 {
-    font-size: 16px;
-  }
-
-  .heroCopy p {
-    font-size: 14px;
-  }
-
-  .rewardStage {
-    height: 300px;
-  }
-
-  .rewardRing {
-    width: 230px;
-    height: 230px;
-
-    border-width: 18px;
-  }
-
-  .giftImage {
-    width: 165px;
-  }
-
-  .rewardCard {
-    width: 105px;
-  }
-
-  .amazonCard {
-    left: 0;
-  }
-
-  .paypalCard {
-    right: 0;
-  }
-
-  .googleCard {
-    right: 50px;
-  }
-
-  .stats {
-    gap: 6px;
+    gap: 10px;
+    margin-bottom: 12px;
   }
 
   .statCard {
-    min-height: 90px;
-
-    padding: 10px 6px;
-
-    text-align: center;
-
-    align-items: center;
+    min-height: 95px;
+    padding: 12px 10px;
   }
 
   .statCard strong {
     font-size: 18px;
+  }
+
+  .trustBar {
+    padding: 12px 12px;
+    gap: 8px;
+  }
+
+  .trustIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .trustItem strong {
+    font-size: 11px;
+  }
+
+  .trustItem span {
+    font-size: 9px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE/TABLET (768px)
+========================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    gap: 16px;
+  }
+
+  .heroCopy {
+    margin-bottom: 16px;
+  }
+
+  .heroCopy h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .heroCopy h2 {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+
+  .heroCopy p {
+    font-size: 14px;
+  }
+
+  .heroStage {
+    min-height: 320px;
+    margin: 8px 0 16px;
+  }
+
+  .login .heroStage {
+    min-height: 340px;
+  }
+
+  .register .heroStage {
+    min-height: 320px;
+  }
+
+  .forgotPassword .heroStage {
+    min-height: 360px;
+  }
+
+  .mainIllustration {
+    width: min(80%, 380px);
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .statCard {
+    min-height: 85px;
+    padding: 10px 8px;
+  }
+
+  .statCard strong {
+    font-size: 16px;
   }
 
   .statCard span {
@@ -672,8 +747,169 @@
   }
 
   .trustBar {
-    grid-template-columns: 1fr;
+    padding: 10px 10px;
+    gap: 6px;
+  }
 
-    padding: 12px;
+  .trustIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  .trustItem strong {
+    font-size: 10px;
+  }
+
+  .trustItem span {
+    font-size: 8px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - SMALL MOBILE (576px)
+========================================= */
+
+@media (max-width: 576px) {
+  .heroCopy {
+    margin-bottom: 12px;
+  }
+
+  .heroCopy h1 {
+    font-size: 28px;
+
+    margin-bottom: 8px;
+  }
+
+  .heroCopy h2 {
+    font-size: 15px;
+
+    margin-bottom: 10px;
+  }
+
+  .heroCopy p {
+    font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+  .heroStage {
+    min-height: 280px;
+    margin: 8px 0 12px;
+  }
+
+  .login .heroStage {
+    min-height: 300px;
+  }
+
+  .register .heroStage {
+    min-height: 280px;
+  }
+
+  .forgotPassword .heroStage {
+    min-height: 320px;
+  }
+
+  .mainIllustration {
+    width: min(75%, 320px);
+  }
+
+  .floatingCard {
+    width: min(120px, 24%);
+  }
+
+  .shield {
+    width: 70px;
+    height: 70px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 6px;
+
+    margin-bottom: 8px;
+  }
+
+  .statCard {
+    min-height: 78px;
+
+    padding: 8px 6px;
+  }
+
+  .statCard strong {
+    font-size: 15px;
+  }
+
+  .statCard span {
+    font-size: 9px;
+  }
+
+  .trustBar {
+    padding: 8px 8px;
+
+    gap: 5px;
+  }
+
+  .trustIcon {
+    width: 33px;
+    height: 33px;
+
+    font-size: 15px;
+  }
+
+  .trustItem strong {
+    font-size: 9px;
+
+    margin-bottom: 1px;
+  }
+
+  .trustItem span {
+    font-size: 7px;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL MOBILE (375px)
+========================================= */
+
+@media (max-width: 375px) {
+  .heroCopy h1 {
+    font-size: 26px;
+  }
+
+  .heroCopy h2 {
+    font-size: 14px;
+  }
+
+  .heroCopy p {
+    font-size: 12px;
+  }
+
+  .mainIllustration {
+    width: min(70%, 280px);
+  }
+
+  .mainGlow {
+    width: 280px;
+    height: 280px;
+  }
+
+  .heroRing {
+    width: 300px;
+    height: 300px;
+  }
+
+  .shield {
+    width: 60px;
+    height: 60px;
+  }
+
+  .gem {
+    font-size: 16px;
+  }
+
+  .coin {
+    font-size: 18px;
   }
 }

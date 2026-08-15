@@ -1,6 +1,10 @@
 .authLayout {
   min-height: 100vh;
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
   background:
     radial-gradient(
       circle at 15% 20%,
@@ -13,6 +17,10 @@
       transparent 30%
     ),
     var(--veloop-background);
+}
 
-  /* overflow: hidden; */
+@media (max-width: 991px) {
+  .authLayout {
+    min-height: auto;
+  }
 }

@@ -1,18 +1,16 @@
 import { Globe, ChevronDown } from 'lucide-react';
 import styles from './AuthHeader.module.css';
+import veloopLogo from '../../assets/images/logo/veloop-logo.png';
 
 function AuthHeader() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <div className={styles.logoMark}>
-          V
-        </div>
-
-        <div className={styles.logoText}>
-          <span>VELOOP</span>
-          <small>REWARDS</small>
-        </div>
+        <img 
+          src={veloopLogo} 
+          alt="VELOOP Rewards Logo" 
+          className={styles.logoImage}
+        />
       </div>
 
       <button className={styles.languageButton}>

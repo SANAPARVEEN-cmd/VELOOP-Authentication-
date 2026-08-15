@@ -14,45 +14,10 @@
   gap: 10px;
 }
 
-.logoMark {
-  width: 42px;
-  height: 42px;
-  border: 3px solid #111827;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 0;
-  position: relative;
-}
-
-.logoMark::before {
-  content: '';
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--veloop-primary);
-  border-radius: 50%;
-}
-
-.logoText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.logoText span {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
-
-.logoText small {
-  margin-top: 4px;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  color: var(--veloop-primary);
+.logoImage {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
 }
 
 .languageButton {
@@ -82,13 +47,8 @@
     padding: 20px;
   }
 
-  .logoMark {
-    width: 36px;
-    height: 36px;
-  }
-
-  .logoText span {
-    font-size: 19px;
+  .logoImage {
+    height: 40px;
   }
 
   .languageButton span {
