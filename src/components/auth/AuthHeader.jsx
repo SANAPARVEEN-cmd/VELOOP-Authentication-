@@ -5,18 +5,29 @@ import veloopLogo from '../../assets/images/logo/veloop-logo.png';
 function AuthHeader() {
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <img 
-          src={veloopLogo} 
-          alt="VELOOP Rewards Logo" 
+      {/* VELOOP Brand */}
+      <div className={styles.brand}>
+        <img
+          src={veloopLogo}
+          alt="VELOOP"
           className={styles.logoImage}
         />
+
+        <div className={styles.brandText}>
+          <div className={styles.brandName}>VELOOP</div>
+          <div className={styles.brandSubtitle}>R E W A R D S</div>
+        </div>
       </div>
 
-      <button className={styles.languageButton}>
-        <Globe size={17} />
+      {/* Language Selector */}
+      <button
+        type="button"
+        className={styles.languageButton}
+        aria-label="Select language"
+      >
+        <Globe size={18} strokeWidth={1.8} />
         <span>English</span>
-        <ChevronDown size={15} />
+        <ChevronDown size={16} strokeWidth={1.8} />
       </button>
     </header>
   );

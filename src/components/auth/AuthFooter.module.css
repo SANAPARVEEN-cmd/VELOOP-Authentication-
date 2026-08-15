@@ -1,121 +1,267 @@
 .footer {
-  position: relative;
-
-  z-index: 25;
-
   width: 100%;
-
-  padding: 24px 20px;
-
-  margin-top: 20px;
-
-  border-top: 1px solid rgba(124, 58, 237, 0.1);
-
-  background: rgba(255, 255, 255, 0.5);
-
-  backdrop-filter: blur(10px);
-
-  border-radius: 0 0 14px 14px;
-
-  text-align: center;
-
-  font-size: 12px;
-
-  color: var(--veloop-text-muted);
+  background: rgba(255, 255, 255, 0.72);
+  border-top: 1px solid rgba(91, 33, 214, 0.08);
+  box-sizing: border-box;
 }
 
-.footerContent {
-  max-width: 600px;
-
+.footerInner {
+  width: min(100% - 80px, 1400px);
   margin: 0 auto;
 
-  display: flex;
+  min-height: 150px;
 
-  justify-content: center;
-
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  gap: 50px;
 
-  gap: 8px;
-
-  flex-wrap: wrap;
+  padding: 30px 0;
 }
 
-.footerContent span {
-  display: block;
 
-  width: 100%;
+/* ================================
+   BRAND
+================================ */
+
+.brandSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brandRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.brandName {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  color: #111827;
+}
+
+.brandRewards {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #6d28d9;
+}
+
+.copyright {
+  margin: 0;
 
   font-size: 12px;
-
-  color: var(--veloop-text-muted);
+  color: #6b7280;
 }
 
-.footerLinks {
+
+/* ================================
+   LINKS
+================================ */
+
+.links {
   display: flex;
-
-  justify-content: center;
-
   align-items: center;
-
-  gap: 6px;
-
-  margin-top: 8px;
+  justify-content: center;
+  gap: 30px;
 }
 
-.footerLink {
-  border: none;
+.links a {
+  position: relative;
 
-  background: none;
-
-  color: var(--veloop-primary);
-
-  cursor: pointer;
-
+  color: #4b5563;
   text-decoration: none;
 
-  transition: color 0.2s ease;
-
-  font-size: 12px;
-
-  padding: 0;
-
+  font-size: 13px;
   font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.footerLink:hover {
-  color: var(--veloop-primary-light);
-
-  text-decoration: underline;
+.links a:hover {
+  color: #6d28d9;
+  transform: translateY(-1px);
 }
 
-@media (max-width: 576px) {
-  .footer {
-    padding: 18px 14px;
 
-    margin-top: 16px;
+/* small separators */
 
-    border-radius: 0;
+.links a:not(:last-child)::after {
+  content: '';
+  position: absolute;
 
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #c4b5fd;
+
+  right: -17px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+
+/* ================================
+   TRUST ITEMS
+================================ */
+
+.trust {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  white-space: nowrap;
+
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f1eaff;
+
+  color: #6d28d9;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1100px) {
+  .footerInner {
+    width: min(100% - 48px, 900px);
+
+    grid-template-columns: 1fr;
+    gap: 22px;
+
+    text-align: center;
+  }
+
+  .brandSection {
+    align-items: center;
+  }
+
+  .links {
+    order: 2;
+  }
+
+  .trust {
+    order: 3;
+    justify-content: center;
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+  .footerInner {
+    width: calc(100% - 32px);
+
+    min-height: auto;
+
+    padding: 28px 0 30px;
+
+    gap: 20px;
+  }
+
+  .brandName {
+    font-size: 15px;
+  }
+
+  .brandRewards {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .copyright {
     font-size: 11px;
   }
 
-  .footerContent {
-    gap: 4px;
+  .links {
+    width: 100%;
+    gap: 0;
+
+    justify-content: space-between;
   }
 
-  .footerContent span:first-child {
+  .links a {
+    font-size: 12px;
+  }
+
+  .links a:not(:last-child)::after {
+    display: none;
+  }
+
+  .trust {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+  }
+
+  .trustItem {
+    flex-direction: column;
+    gap: 5px;
+
+    font-size: 9px;
+
+    white-space: normal;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 380px) {
+  .footerInner {
+    width: calc(100% - 24px);
+  }
+
+  .links a {
     font-size: 11px;
-
-    margin-bottom: 8px;
   }
 
-  .footerLink {
-    font-size: 11px;
+  .trustItem {
+    font-size: 8px;
   }
 
-  .footerLinks {
-    font-size: 10px;
-
-    gap: 4px;
+  .icon {
+    width: 28px;
+    height: 28px;
   }
 }
