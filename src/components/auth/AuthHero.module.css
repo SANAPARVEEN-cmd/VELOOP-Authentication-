@@ -1,123 +1,264 @@
-/* =========================================
-   HERO SECTION - BASE
-========================================= */
+/* =========================================================
+   AUTH HERO - MAIN
+========================================================= */
 
 .hero {
   position: relative;
   width: 100%;
-  height: 100%;
-
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-
+  padding: 8px 0 0;
   background: transparent;
-
   overflow: visible;
+  box-sizing: border-box;
 }
 
-/* =========================================
-   HERO COPY (Heading + Description)
-========================================= */
+
+/* =========================================================
+   MAIN HERO LAYOUT
+   LEFT = CONTENT
+   RIGHT = ILLUSTRATION
+========================================================= */
+
+.heroMain {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  min-height: 500px;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.heroLeft {
+  width: 100%;
+  min-width: 0;
+  padding: 20px 10px 20px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
 
 .heroCopy {
   width: 100%;
-  max-width: 100%;
-  
-  margin-bottom: 24px;
+  max-width: 470px;
+  margin-bottom: 32px;
 }
 
 .heroCopy h1 {
   margin: 0 0 12px;
-
   color: #0f1020;
-
-  font-size: clamp(36px, 4vw, 52px);
-
-  line-height: 1.1;
-
+  font-size: clamp(38px, 4vw, 56px);
+  line-height: 1.05;
   font-weight: 800;
-
-  letter-spacing: -1.5px;
+  letter-spacing: -2px;
 }
 
 .heroCopy h2 {
-  margin: 0 0 14px;
-
+  margin: 0 0 16px;
   color: #6420d7;
-
-  font-size: clamp(18px, 2.5vw, 22px);
-
+  font-size: clamp(18px, 2vw, 23px);
   line-height: 1.3;
-
   font-weight: 700;
 }
 
 .heroCopy p {
   margin: 0;
-
-  max-width: 100%;
-
+  max-width: 440px;
   color: #3d3548;
-
-  font-size: clamp(14px, 1.8vw, 16px);
-
-  line-height: 1.6;
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.65;
 }
 
-/* =========================================
-   HERO STAGE - Illustration Container
-   Uses flex layout to avoid absolute 
-   positioning overlap issues
-========================================= */
 
-.heroStage {
-  position: relative;
+/* =========================================================
+   STATISTICS
+   3 CARDS IN ONE ROW
+========================================================= */
 
+.stats {
   width: 100%;
-  height: auto;
+  max-width: 540px;
 
-  min-height: 380px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL STAT CARD
+========================================================= */
+
+.statCard {
+  flex: 1;
+  min-width: 0;
+
+  min-height: 105px;
+
+  padding: 16px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid rgba(124, 58, 237, 0.12);
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 24px rgba(60, 30, 120, 0.07),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 30px rgba(80, 40, 160, 0.12);
+}
+
+
+/* =========================================================
+   STAT ICON
+========================================================= */
+
+.statIcon {
+  width: 42px;
+  height: 42px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin: 12px 0 20px;
+  margin-bottom: 7px;
+
+  border-radius: 12px;
+
+  background: rgba(124, 58, 237, 0.09);
+
+  color: #7c3aed;
 }
 
-/* =========================================
-   LOGIN VARIANT - Larger illustration
-========================================= */
+
+/* =========================================================
+   STAT CONTENT
+========================================================= */
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statContent strong {
+  display: block;
+
+  color: #121222;
+
+  font-size: 21px;
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+.statContent span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #696579;
+
+  font-size: 11px;
+  line-height: 1.25;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   RIGHT SIDE - ILLUSTRATION STAGE
+========================================================= */
+
+.heroStage {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   LOGIN ILLUSTRATION
+========================================================= */
 
 .login .heroStage {
-  min-height: 420px;
+  min-height: 520px;
 }
 
-/* =========================================
-   REGISTER VARIANT
-========================================= */
+
+/* =========================================================
+   REGISTER
+========================================================= */
 
 .register .heroStage {
-  min-height: 400px;
+  min-height: 500px;
 }
 
-/* =========================================
-   FORGOT PASSWORD VARIANT - Slightly larger
-========================================= */
+
+/* =========================================================
+   FORGOT PASSWORD
+========================================================= */
 
 .forgotPassword .heroStage {
-  min-height: 440px;
+  min-height: 470px;
 }
 
-/* =========================================
-   MAIN GLOW (Decorative background)
-========================================= */
+
+/* =========================================================
+   MAIN GLOW
+========================================================= */
 
 .mainGlow {
   position: absolute;
 
-  width: 360px;
-  height: 360px;
+  width: 460px;
+  height: 460px;
 
   left: 50%;
   top: 50%;
@@ -129,25 +270,27 @@
   background:
     radial-gradient(
       circle,
-      rgba(139, 92, 246, 0.32),
-      rgba(139, 92, 246, 0.12) 45%,
-      transparent 70%
+      rgba(139, 92, 246, 0.32) 0%,
+      rgba(168, 85, 247, 0.18) 35%,
+      rgba(139, 92, 246, 0.08) 55%,
+      transparent 72%
     );
 
-  filter: blur(8px);
+  filter: blur(10px);
 
   z-index: 1;
 }
 
-/* =========================================
-   HERO RING (Decorative)
-========================================= */
+
+/* =========================================================
+   DECORATIVE RING
+========================================================= */
 
 .heroRing {
   position: absolute;
 
-  width: 380px;
-  height: 380px;
+  width: 420px;
+  height: 420px;
 
   left: 50%;
   top: 50%;
@@ -156,57 +299,101 @@
 
   border-radius: 50%;
 
-  background: conic-gradient(
-    from 200deg,
-    rgba(255, 184, 140, 0.55),
-    rgba(255, 140, 170, 0.45) 25%,
-    rgba(139, 92, 246, 0.35) 55%,
-    transparent 78%
-  );
+  background:
+    conic-gradient(
+      from 200deg,
+      rgba(255, 184, 140, 0.55),
+      rgba(255, 140, 170, 0.4) 25%,
+      rgba(139, 92, 246, 0.3) 55%,
+      transparent 78%
+    );
 
-  filter: blur(28px);
+  filter: blur(25px);
 
-  animation: rotateRing 16s linear infinite;
+  opacity: 0.8;
+
+  animation: rotateRing 18s linear infinite;
 
   z-index: 2;
 }
 
-/* =========================================
-   MAIN ILLUSTRATION - LARGE & PROMINENT
-========================================= */
+
+/* =========================================================
+   MAIN ILLUSTRATION
+   LARGE
+========================================================= */
 
 .mainIllustration {
   position: relative;
 
-  width: min(90%, 520px);
+  width: min(94%, 560px);
+
   height: auto;
 
-  max-width: 100%;
+  max-width: 560px;
 
   object-fit: contain;
 
   z-index: 8;
 
-  filter: drop-shadow(0 30px 50px rgba(80, 32, 160, 0.25));
+  filter:
+    drop-shadow(
+      0 30px 45px rgba(80, 32, 160, 0.22)
+    );
 
   animation: illustrationFloat 5s ease-in-out infinite;
 }
 
-/* =========================================
-   FLOATING CARDS (Login only)
-========================================= */
+
+/* LOGIN IMAGE - EXTRA LARGE */
+
+.illustration-login {
+  width: min(96%, 580px);
+  max-width: 580px;
+}
+
+
+/* REGISTER IMAGE */
+
+.illustration-register {
+  width: min(92%, 540px);
+  max-width: 540px;
+}
+
+
+/* FORGOT IMAGE */
+
+.illustration-forgotPassword {
+  width: min(90%, 500px);
+  max-width: 500px;
+}
+
+
+/* =========================================================
+   FLOATING REWARD CARDS
+========================================================= */
 
 .floatingCard {
   position: absolute;
 
-  width: min(160px, 28%);
-
   z-index: 12;
 
-  filter: drop-shadow(0 20px 30px rgba(70, 30, 140, 0.22));
+  width: 145px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 18px 25px rgba(70, 30, 140, 0.22)
+    );
 
   transition: transform 0.3s ease;
 }
+
+
+/* AMAZON */
 
 .amazonCard {
   top: 8%;
@@ -215,23 +402,30 @@
   transform: rotate(-8deg);
 }
 
+
+/* PAYPAL */
+
 .paypalCard {
-  top: 45%;
-  right: 3%;
+  top: 43%;
+  right: 2%;
 
   transform: rotate(7deg);
 }
+
+
+/* GOOGLE PLAY */
 
 .googleCard {
-  bottom: 10%;
-  right: 15%;
+  bottom: 8%;
+  right: 12%;
 
   transform: rotate(7deg);
 }
 
-/* =========================================
-   GEMS (Decorative)
-========================================= */
+
+/* =========================================================
+   GEMS
+========================================================= */
 
 .gem {
   position: absolute;
@@ -244,29 +438,42 @@
 
   color: #7c3aed;
 
-  filter: drop-shadow(0 7px 10px rgba(124, 58, 237, 0.35));
+  filter:
+    drop-shadow(
+      0 8px 12px rgba(124, 58, 237, 0.35)
+    )
+    drop-shadow(
+      0 0 12px rgba(168, 85, 247, 0.35)
+    );
 
-  animation: floatingGem 4s ease-in-out infinite;
+  animation:
+    floatingGem 4s ease-in-out infinite;
 }
+
+
+/* LOGIN GEMS */
 
 .gemOne {
   top: 5%;
-  right: 12%;
+  right: 10%;
 }
 
 .gemTwo {
-  top: 35%;
-  left: 3%;
+  top: 38%;
+  left: 4%;
 
   animation-delay: 0.7s;
 }
 
 .gemThree {
-  bottom: 15%;
+  bottom: 13%;
   left: 8%;
 
   animation-delay: 1.2s;
 }
+
+
+/* REGISTER GEM */
 
 .registerGemOne {
   top: 8%;
@@ -275,9 +482,12 @@
   animation-delay: 0.5s;
 }
 
+
+/* FORGOT PASSWORD GEMS */
+
 .securityGemOne {
   top: 12%;
-  left: 5%;
+  left: 6%;
 
   animation-delay: 0.3s;
 }
@@ -289,9 +499,10 @@
   animation-delay: 0.9s;
 }
 
-/* =========================================
-   COINS (Decorative)
-========================================= */
+
+/* =========================================================
+   COINS
+========================================================= */
 
 .coin {
   position: absolute;
@@ -302,10 +513,17 @@
 
   color: #f59e0b;
 
-  filter: drop-shadow(0 8px 10px rgba(245, 158, 11, 0.28));
+  filter:
+    drop-shadow(
+      0 8px 10px rgba(245, 158, 11, 0.3)
+    );
 
-  animation: floatingCoin 4.5s ease-in-out infinite;
+  animation:
+    floatingCoin 4.5s ease-in-out infinite;
 }
+
+
+/* LOGIN */
 
 .coinOne {
   bottom: 12%;
@@ -318,6 +536,9 @@
 
   animation-delay: 1s;
 }
+
+
+/* REGISTER */
 
 .registerCoinOne {
   top: 15%;
@@ -340,9 +561,10 @@
   animation-delay: 1.2s;
 }
 
-/* =========================================
-   SHIELD (Register)
-========================================= */
+
+/* =========================================================
+   REGISTER SHIELD
+========================================================= */
 
 .shield {
   position: absolute;
@@ -357,33 +579,42 @@
 
   z-index: 10;
 
-  color: #7c3aed;
-
-  filter: drop-shadow(0 12px 20px rgba(124, 58, 237, 0.3));
-
-  animation: shieldGlow 3s ease-in-out infinite;
-
   display: flex;
   align-items: center;
   justify-content: center;
+
+  color: #7c3aed;
+
+  filter:
+    drop-shadow(
+      0 12px 20px rgba(124, 58, 237, 0.3)
+    );
+
+  animation:
+    shieldGlow 3s ease-in-out infinite;
 }
 
-/* =========================================
-   SPARKLES (Forgot Password)
-========================================= */
+
+/* =========================================================
+   SPARKLES
+========================================================= */
 
 .sparkle {
   position: absolute;
 
-  font-size: 20px;
+  z-index: 10;
 
   color: #fcd34d;
 
-  filter: drop-shadow(0 4px 8px rgba(252, 211, 77, 0.3));
+  font-size: 20px;
 
-  animation: twinkle 2s ease-in-out infinite;
+  filter:
+    drop-shadow(
+      0 4px 8px rgba(252, 211, 77, 0.3)
+    );
 
-  z-index: 7;
+  animation:
+    twinkle 2s ease-in-out infinite;
 }
 
 .sparkleOne {
@@ -402,84 +633,15 @@
   top: 45%;
   right: 12%;
 
-  animation-delay: 1.2s;
-
   font-size: 16px;
+
+  animation-delay: 1.2s;
 }
 
-/* =========================================
-   STATISTICS
-========================================= */
 
-.stats {
-  position: relative;
-
-  z-index: 20;
-
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 12px;
-
-  margin-bottom: 16px;
-}
-
-.statCard {
-  min-height: 100px;
-
-  padding: 14px 12px;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  gap: 6px;
-
-  background: rgba(255, 255, 255, 0.88);
-
-  border: 1px solid rgba(124, 58, 237, 0.1);
-
-  border-radius: 14px;
-
-  box-shadow: 0 8px 20px rgba(60, 30, 120, 0.05);
-
-  backdrop-filter: blur(10px);
-}
-
-.statCard svg {
-  color: #7c3aed;
-}
-
-.statCard strong {
-  display: block;
-
-  color: #121222;
-
-  font-size: 20px;
-
-  line-height: 1;
-
-  font-weight: 800;
-}
-
-.statCard span {
-  color: #696579;
-
-  font-size: 11px;
-
-  font-weight: 500;
-}
-
-/* =========================================
-   TRUST INDICATORS - CRITICAL FIX
-   Positioned at bottom to prevent overlap
-========================================= */
+/* =========================================================
+   TRUST BAR
+========================================================= */
 
 .trustBar {
   position: relative;
@@ -488,34 +650,51 @@
 
   width: 100%;
 
-  padding: 14px 14px;
+  margin-top: 20px;
+
+  padding: 14px 18px;
 
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 10px;
+  gap: 12px;
 
-  background: rgba(216, 195, 255, 0.7);
+  background:
+    rgba(216, 195, 255, 0.72);
 
-  border-radius: 14px;
+  border-radius: 16px;
+
+  border: 1px solid rgba(124, 58, 237, 0.08);
 
   backdrop-filter: blur(12px);
+
+  box-sizing: border-box;
 }
+
+
+/* =========================================================
+   TRUST ITEM
+========================================================= */
 
 .trustItem {
   display: flex;
 
   align-items: center;
 
-  gap: 10px;
+  gap: 11px;
 
-  padding: 4px;
+  padding: 4px 8px;
 }
 
+
+/* =========================================================
+   TRUST ICON
+========================================================= */
+
 .trustIcon {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
 
   flex-shrink: 0;
 
@@ -525,21 +704,27 @@
 
   border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.8);
+  background:
+    rgba(255, 255, 255, 0.9);
 
   color: #7c3aed;
 }
 
+
+/* =========================================================
+   TRUST TEXT
+========================================================= */
+
 .trustItem strong {
   display: block;
 
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 
   color: #171329;
 
   font-size: 12px;
 
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .trustItem span {
@@ -552,32 +737,27 @@
   line-height: 1.35;
 }
 
-/* =========================================
+
+/* =========================================================
    ANIMATIONS
-========================================= */
+========================================================= */
 
 @keyframes rotateRing {
   from {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
   }
 
   to {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
   }
 }
+
 
 @keyframes illustrationFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-@keyframes floatingGem {
   0%,
   100% {
     transform: translateY(0);
@@ -588,86 +768,380 @@
   }
 }
 
-@keyframes floatingCoin {
+
+@keyframes floatingGem {
   0%,
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-7px) rotate(4deg);
+    transform: translateY(-9px);
   }
 }
+
+
+@keyframes floatingCoin {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-8px)
+      rotate(4deg);
+  }
+}
+
 
 @keyframes shieldGlow {
   0%,
   100% {
-    filter: drop-shadow(0 12px 20px rgba(124, 58, 237, 0.3));
+    filter:
+      drop-shadow(
+        0 12px 20px rgba(124, 58, 237, 0.3)
+      );
   }
 
   50% {
-    filter: drop-shadow(0 16px 28px rgba(124, 58, 237, 0.5));
+    filter:
+      drop-shadow(
+        0 16px 28px rgba(124, 58, 237, 0.5)
+      );
   }
 }
+
 
 @keyframes twinkle {
   0%,
   100% {
     opacity: 0.4;
-
     transform: scale(1);
   }
 
   50% {
     opacity: 1;
-
-    transform: scale(1.1);
+    transform: scale(1.12);
   }
 }
 
-/* =========================================
-   RESPONSIVE - TABLET (1024px)
-========================================= */
 
-@media (max-width: 1024px) {
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .heroMain {
+    grid-template-columns: 40% 60%;
+  }
+
   .heroCopy h1 {
     font-size: 40px;
   }
 
   .heroCopy h2 {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .heroCopy p {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .mainIllustration {
-    width: min(85%, 450px);
+    width: min(94%, 500px);
+  }
+
+  .illustration-login {
+    width: min(96%, 520px);
+  }
+
+  .floatingCard {
+    width: 120px;
   }
 
   .stats {
-    gap: 10px;
-    margin-bottom: 12px;
+    gap: 7px;
   }
 
   .statCard {
     min-height: 95px;
-    padding: 12px 10px;
+    padding: 12px 7px;
   }
 
-  .statCard strong {
+  .statIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .statContent strong {
     font-size: 18px;
   }
 
-  .trustBar {
-    padding: 12px 12px;
+  .statContent span {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding-top: 0;
+  }
+
+  .heroMain {
+    display: flex;
+    flex-direction: column;
+
+    min-height: auto;
+
+    gap: 10px;
+  }
+
+
+  /* LEFT */
+
+  .heroLeft {
+    width: 100%;
+
+    padding: 10px 0;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .heroCopy {
+    max-width: 600px;
+
+    margin-bottom: 20px;
+  }
+
+  .heroCopy h1 {
+    font-size: 34px;
+
+    letter-spacing: -1px;
+  }
+
+  .heroCopy h2 {
+    font-size: 18px;
+  }
+
+  .heroCopy p {
+    max-width: 560px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+  }
+
+
+  /* STATS */
+
+  .stats {
+    width: 100%;
+
+    max-width: 600px;
+
     gap: 8px;
   }
 
+  .statCard {
+    min-height: 90px;
+  }
+
+
+  /* RIGHT */
+
+  .heroStage {
+    width: 100%;
+
+    min-height: 430px;
+
+    margin-top: 0;
+  }
+
+  .login .heroStage {
+    min-height: 440px;
+  }
+
+  .register .heroStage {
+    min-height: 400px;
+  }
+
+  .forgotPassword .heroStage {
+    min-height: 390px;
+  }
+
+
+  .mainIllustration {
+    width: min(90%, 430px);
+  }
+
+  .illustration-login {
+    width: min(94%, 450px);
+  }
+
+  .floatingCard {
+    width: 110px;
+  }
+
+
+  /* TRUST */
+
+  .trustBar {
+    margin-top: 12px;
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .trustItem {
+    justify-content: center;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .heroCopy {
+    margin-bottom: 16px;
+  }
+
+  .heroCopy h1 {
+    font-size: 29px;
+  }
+
+  .heroCopy h2 {
+    font-size: 16px;
+  }
+
+  .heroCopy p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+
+  /* Stats stay horizontal */
+
+  .stats {
+    gap: 5px;
+  }
+
+  .statCard {
+    min-height: 78px;
+
+    padding: 8px 4px;
+
+    border-radius: 11px;
+  }
+
+  .statIcon {
+    width: 30px;
+    height: 30px;
+
+    margin-bottom: 4px;
+  }
+
+  .statIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .statContent strong {
+    font-size: 15px;
+  }
+
+  .statContent span {
+    font-size: 8px;
+  }
+
+
+  /* Illustration */
+
+  .heroStage {
+    min-height: 330px;
+  }
+
+  .login .heroStage {
+    min-height: 350px;
+  }
+
+  .register .heroStage {
+    min-height: 320px;
+  }
+
+  .forgotPassword .heroStage {
+    min-height: 310px;
+  }
+
+
+  .mainIllustration {
+    width: min(88%, 350px);
+  }
+
+  .illustration-login {
+    width: min(92%, 370px);
+  }
+
+
+  /* Cards */
+
+  .floatingCard {
+    width: 82px;
+  }
+
+  .amazonCard {
+    top: 7%;
+    left: 0;
+  }
+
+  .paypalCard {
+    right: 0;
+  }
+
+  .googleCard {
+    right: 8%;
+  }
+
+
+  /* Gems */
+
+  .gemOne {
+    right: 7%;
+  }
+
+  .gemTwo {
+    left: 2%;
+  }
+
+  .gemThree {
+    left: 6%;
+  }
+
+
+  /* Trust */
+
+  .trustBar {
+    padding: 10px;
+  }
+
   .trustIcon {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
 
   .trustItem strong {
@@ -679,201 +1153,13 @@
   }
 }
 
-/* =========================================
-   RESPONSIVE - MOBILE/TABLET (768px)
-========================================= */
 
-@media (max-width: 768px) {
-  .hero {
-    gap: 16px;
-  }
-
-  .heroCopy {
-    margin-bottom: 16px;
-  }
-
-  .heroCopy h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-
-  .heroCopy h2 {
-    font-size: 17px;
-    margin-bottom: 12px;
-  }
-
-  .heroCopy p {
-    font-size: 14px;
-  }
-
-  .heroStage {
-    min-height: 320px;
-    margin: 8px 0 16px;
-  }
-
-  .login .heroStage {
-    min-height: 340px;
-  }
-
-  .register .heroStage {
-    min-height: 320px;
-  }
-
-  .forgotPassword .heroStage {
-    min-height: 360px;
-  }
-
-  .mainIllustration {
-    width: min(80%, 380px);
-  }
-
-  .stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-
-  .statCard {
-    min-height: 85px;
-    padding: 10px 8px;
-  }
-
-  .statCard strong {
-    font-size: 16px;
-  }
-
-  .statCard span {
-    font-size: 10px;
-  }
-
-  .trustBar {
-    padding: 10px 10px;
-    gap: 6px;
-  }
-
-  .trustIcon {
-    width: 36px;
-    height: 36px;
-    font-size: 17px;
-  }
-
-  .trustItem strong {
-    font-size: 10px;
-  }
-
-  .trustItem span {
-    font-size: 8px;
-  }
-}
-
-/* =========================================
-   RESPONSIVE - SMALL MOBILE (576px)
-========================================= */
-
-@media (max-width: 576px) {
-  .heroCopy {
-    margin-bottom: 12px;
-  }
-
-  .heroCopy h1 {
-    font-size: 28px;
-
-    margin-bottom: 8px;
-  }
-
-  .heroCopy h2 {
-    font-size: 15px;
-
-    margin-bottom: 10px;
-  }
-
-  .heroCopy p {
-    font-size: 13px;
-
-    line-height: 1.5;
-  }
-
-  .heroStage {
-    min-height: 280px;
-    margin: 8px 0 12px;
-  }
-
-  .login .heroStage {
-    min-height: 300px;
-  }
-
-  .register .heroStage {
-    min-height: 280px;
-  }
-
-  .forgotPassword .heroStage {
-    min-height: 320px;
-  }
-
-  .mainIllustration {
-    width: min(75%, 320px);
-  }
-
-  .floatingCard {
-    width: min(120px, 24%);
-  }
-
-  .shield {
-    width: 70px;
-    height: 70px;
-  }
-
-  .stats {
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 6px;
-
-    margin-bottom: 8px;
-  }
-
-  .statCard {
-    min-height: 78px;
-
-    padding: 8px 6px;
-  }
-
-  .statCard strong {
-    font-size: 15px;
-  }
-
-  .statCard span {
-    font-size: 9px;
-  }
-
-  .trustBar {
-    padding: 8px 8px;
-
-    gap: 5px;
-  }
-
-  .trustIcon {
-    width: 33px;
-    height: 33px;
-
-    font-size: 15px;
-  }
-
-  .trustItem strong {
-    font-size: 9px;
-
-    margin-bottom: 1px;
-  }
-
-  .trustItem span {
-    font-size: 7px;
-  }
-}
-
-/* =========================================
-   EXTRA SMALL MOBILE (375px)
-========================================= */
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
 
 @media (max-width: 375px) {
+
   .heroCopy h1 {
     font-size: 26px;
   }
@@ -886,30 +1172,44 @@
     font-size: 12px;
   }
 
+
+  .statCard {
+    min-height: 72px;
+  }
+
+  .statContent strong {
+    font-size: 14px;
+  }
+
+  .statContent span {
+    font-size: 7px;
+  }
+
+
+  .heroStage {
+    min-height: 290px;
+  }
+
+  .login .heroStage {
+    min-height: 310px;
+  }
+
+
   .mainIllustration {
-    width: min(70%, 280px);
+    width: min(86%, 300px);
   }
 
-  .mainGlow {
-    width: 280px;
-    height: 280px;
+  .illustration-login {
+    width: min(90%, 315px);
   }
 
-  .heroRing {
-    width: 300px;
-    height: 300px;
+
+  .floatingCard {
+    width: 68px;
   }
 
-  .shield {
-    width: 60px;
-    height: 60px;
-  }
 
-  .gem {
-    font-size: 16px;
-  }
-
-  .coin {
-    font-size: 18px;
+  .trustItem {
+    gap: 8px;
   }
 }
