@@ -1,56 +1,38 @@
 /* =========================================
    AUTH LAYOUT
 ========================================= */
-
 .authLayout {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-
-  overflow-x: hidden;
-
-  background:
-    radial-gradient(
-      circle at 8% 15%,
-      rgba(139, 92, 246, 0.16),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 92% 85%,
-      rgba(109, 40, 217, 0.12),
-      transparent 30%
-    ),
-    var(--veloop-background, #faf9ff);
-}
-
-/* Keep direct children from creating unexpected width */
-.authLayout > * {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* =========================================
-   DESKTOP
-========================================= */
-
-@media (min-width: 1200px) {
-  .authLayout {
+    width: 100%;
     min-height: 100vh;
-  }
-}
+    height: auto;
 
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(124, 58, 237, 0.10);
+    border-radius: 12px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(139, 92, 246, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(109, 40, 217, 0.12),
+            transparent 30%
+        ),
+        var(--veloop-background);
+
+
+}
 /* =========================================
    LAPTOP / TABLET
 ========================================= */
 
-@media (max-width: 1199px) {
-  .authLayout {
-    min-height: 100vh;
-  }
-}
 
 /* =========================================
    MOBILE
@@ -59,6 +41,6 @@
 @media (max-width: 991px) {
   .authLayout {
     min-height: 100dvh;
-    overflow-x: hidden;
+  
   }
 }

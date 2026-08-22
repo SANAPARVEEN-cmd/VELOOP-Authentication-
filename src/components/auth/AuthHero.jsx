@@ -1,11 +1,13 @@
 import {
   Users,
   Coins,
-  Gem,
   ShieldCheck,
   Gift,
   BadgeCheck,
+  Gem,
 } from "lucide-react";
+
+import diamond from "../../assets/images/rewards/diamond.png";
 
 import styles from "./AuthHero.module.css";
 
@@ -17,9 +19,9 @@ import amazonCard from "../../assets/images/rewards/amazon-card.png";
 import paypalCard from "../../assets/images/rewards/paypal-card.png";
 import googlePlayCard from "../../assets/images/rewards/google-play-card.png";
 
-// ========================================
-// HERO CONFIGURATION
-// ========================================
+/* =====================================================
+   HERO CONFIGURATION
+===================================================== */
 
 const heroConfig = {
   login: {
@@ -53,32 +55,32 @@ const heroConfig = {
   },
 };
 
-// ========================================
-// AUTH HERO COMPONENT
-// ========================================
+/* =====================================================
+   AUTH HERO
+===================================================== */
 
 function AuthHero({ variant = "login" }) {
   const config = heroConfig[variant] || heroConfig.login;
 
   return (
-    <section
-      className={`${styles.hero} ${styles[variant]}`}
-    >
-      {/* ========================================
-          MAIN CONTENT
-          LEFT = COPY + STATS
-          RIGHT = ILLUSTRATION
-      ======================================== */}
+    <section className={`${styles.hero} ${styles[variant]}`}>
+
+      {/* =================================================
+          MAIN HERO CONTENT
+          LEFT = TEXT + STATS
+          RIGHT = IMAGE
+      ================================================= */}
 
       <div className={styles.heroMain}>
 
-        {/* ========================================
-            LEFT CONTENT
-        ======================================== */}
+        {/* =================================================
+            LEFT SIDE
+        ================================================= */}
 
         <div className={styles.heroLeft}>
 
-          {/* Hero Copy */}
+          {/* HERO COPY */}
+
           <div className={styles.heroCopy}>
             <h1>{config.title}</h1>
 
@@ -87,17 +89,21 @@ function AuthHero({ variant = "login" }) {
             <p>{config.description}</p>
           </div>
 
-          {/* ========================================
+          {/* =================================================
               STATISTICS
-          ======================================== */}
+          ================================================= */}
 
           {config.showStats && (
             <div className={styles.stats}>
 
               {/* Happy Users */}
+
               <div className={styles.statCard}>
                 <div className={styles.statIcon}>
-                  <Users size={26} strokeWidth={2} />
+                  <Users
+                    size={26}
+                    strokeWidth={2}
+                  />
                 </div>
 
                 <div className={styles.statContent}>
@@ -106,10 +112,15 @@ function AuthHero({ variant = "login" }) {
                 </div>
               </div>
 
+
               {/* Rewards Earned */}
+
               <div className={styles.statCard}>
                 <div className={styles.statIcon}>
-                  <Coins size={26} strokeWidth={2} />
+                  <Coins
+                    size={26}
+                    strokeWidth={2}
+                  />
                 </div>
 
                 <div className={styles.statContent}>
@@ -118,10 +129,15 @@ function AuthHero({ variant = "login" }) {
                 </div>
               </div>
 
+
               {/* Brands */}
+
               <div className={styles.statCard}>
                 <div className={styles.statIcon}>
-                  <BadgeCheck size={26} strokeWidth={2} />
+                  <BadgeCheck
+                    size={26}
+                    strokeWidth={2}
+                  />
                 </div>
 
                 <div className={styles.statContent}>
@@ -134,9 +150,10 @@ function AuthHero({ variant = "login" }) {
           )}
         </div>
 
-        {/* ========================================
-            RIGHT ILLUSTRATION AREA
-        ======================================== */}
+
+        {/* =================================================
+            RIGHT SIDE — ILLUSTRATION
+        ================================================= */}
 
         <div
           className={`${styles.heroStage} ${
@@ -144,79 +161,98 @@ function AuthHero({ variant = "login" }) {
           }`}
         >
 
-          {/* Main Glow */}
+          {/* Background Glow */}
+
           <div className={styles.mainGlow} />
 
           {/* Decorative Ring */}
+
           <div className={styles.heroRing} />
 
-          {/* ========================================
-              LOGIN DECORATIONS
-          ======================================== */}
+
+          {/* =================================================
+              LOGIN REWARD DECORATIONS
+          ================================================= */}
 
           {variant === "login" && config.showRewardCards && (
             <>
-              {/* Amazon Gift Card */}
+
+              {/* =================================================
+                  AMAZON GIFT CARD
+              ================================================= */}
+
               <img
                 src={amazonCard}
                 alt="Amazon Gift Card"
                 className={`${styles.floatingCard} ${styles.amazonCard}`}
               />
 
-              {/* PayPal Card */}
+
+              {/* =================================================
+                  PAYPAL CARD
+              ================================================= */}
+
               <img
                 src={paypalCard}
                 alt="PayPal Cash"
                 className={`${styles.floatingCard} ${styles.paypalCard}`}
               />
 
-              {/* Google Play Card */}
+
+              {/* =================================================
+                  GOOGLE PLAY CARD
+              ================================================= */}
+
               <img
                 src={googlePlayCard}
                 alt="Google Play Gift Card"
                 className={`${styles.floatingCard} ${styles.googleCard}`}
               />
 
-              {/* ========================================
-                  FILLED PURPLE GEMS
-              ======================================== */}
 
-              <div
-                className={`${styles.gem} ${styles.gemOne}`}
-              >
-                <Gem
-                  size={44}
-                  strokeWidth={1.8}
-                  fill="#A855F7"
-                  color="#7C3AED"
-                />
-              </div>
+              {/* =================================================
+                  REAL DIAMONDS
+              ================================================= */}
 
-              <div
-                className={`${styles.gem} ${styles.gemTwo}`}
-              >
-                <Gem
-                  size={30}
-                  strokeWidth={1.8}
-                  fill="#A855F7"
-                  color="#7C3AED"
-                />
-              </div>
+              {/* Diamond 1
+                  Under the first statistics card
+              */}
 
-              <div
-                className={`${styles.gem} ${styles.gemThree}`}
-              >
-                <Gem
-                  size={36}
-                  strokeWidth={1.8}
-                  fill="#A855F7"
-                  color="#7C3AED"
-                />
-              </div>
+              <img
+                src={diamond}
+                alt=""
+                aria-hidden="true"
+                className={`${styles.diamond} ${styles.diamondOne}`}
+              />
 
-              {/* ========================================
-                  DECORATIVE COINS
-              ======================================== */}
+
+              {/* Diamond 2
+                  Above the second statistics card
+              */}
+
+              <img
+                src={diamond}
+                alt=""
+                aria-hidden="true"
+                className={`${styles.diamond} ${styles.diamondTwo}`}
+              />
+
+
+              {/* Diamond 3
+                  Under the first statistics card
+              */}
+
+              <img
+                src={diamond}
+                alt=""
+                aria-hidden="true"
+                className={`${styles.diamond} ${styles.diamondThree}`}
+              />
+
+
+              {/* =================================================
+                  COINS
+              ================================================= */}
 
               <div
                 className={`${styles.coin} ${styles.coinOne}`}
@@ -235,15 +271,18 @@ function AuthHero({ variant = "login" }) {
                   strokeWidth={1.7}
                 />
               </div>
+
             </>
           )}
 
-          {/* ========================================
+
+          {/* =================================================
               REGISTER DECORATIONS
-          ======================================== */}
+          ================================================= */}
 
           {variant === "register" && (
             <>
+
               <div
                 className={`${styles.coin} ${styles.registerCoinOne}`}
               >
@@ -271,7 +310,9 @@ function AuthHero({ variant = "login" }) {
                 />
               </div>
 
+
               {/* Shield */}
+
               <div className={styles.shield}>
                 <ShieldCheck
                   size={50}
@@ -279,7 +320,9 @@ function AuthHero({ variant = "login" }) {
                 />
               </div>
 
-              {/* Filled Gem */}
+
+              {/* Register Gem */}
+
               <div
                 className={`${styles.gem} ${styles.registerGemOne}`}
               >
@@ -290,16 +333,18 @@ function AuthHero({ variant = "login" }) {
                   color="#7C3AED"
                 />
               </div>
+
             </>
           )}
 
-          {/* ========================================
+
+          {/* =================================================
               FORGOT PASSWORD DECORATIONS
-          ======================================== */}
+          ================================================= */}
 
           {variant === "forgotPassword" && (
             <>
-              {/* Sparkles */}
+
               <div
                 className={`${styles.sparkle} ${styles.sparkleOne}`}
               >
@@ -318,7 +363,9 @@ function AuthHero({ variant = "login" }) {
                 ✦
               </div>
 
-              {/* Filled Gems */}
+
+              {/* Security Gem 1 */}
+
               <div
                 className={`${styles.gem} ${styles.securityGemOne}`}
               >
@@ -330,6 +377,9 @@ function AuthHero({ variant = "login" }) {
                 />
               </div>
 
+
+              {/* Security Gem 2 */}
+
               <div
                 className={`${styles.gem} ${styles.securityGemTwo}`}
               >
@@ -340,12 +390,14 @@ function AuthHero({ variant = "login" }) {
                   color="#7C3AED"
                 />
               </div>
+
             </>
           )}
 
-          {/* ========================================
-              MAIN REWARD ILLUSTRATION
-          ======================================== */}
+
+          {/* =================================================
+              MAIN HERO IMAGE
+          ================================================= */}
 
           <img
             src={config.illustration}
@@ -358,15 +410,17 @@ function AuthHero({ variant = "login" }) {
         </div>
       </div>
 
-      {/* ========================================
-          TRUST INDICATORS
-          FULL WIDTH BELOW MAIN CONTENT
-      ======================================== */}
+
+      {/* =================================================
+          TRUST BAR
+      ================================================= */}
 
       <div className={styles.trustBar}>
 
-        {/* Secure */}
+        {/* Secure & Safe */}
+
         <div className={styles.trustItem}>
+
           <div className={styles.trustIcon}>
             <ShieldCheck
               size={23}
@@ -378,10 +432,14 @@ function AuthHero({ variant = "login" }) {
             <strong>Secure & Safe</strong>
             <span>Your data is protected</span>
           </div>
+
         </div>
 
-        {/* Rewards */}
+
+        {/* Instant Rewards */}
+
         <div className={styles.trustItem}>
+
           <div className={styles.trustIcon}>
             <Gift
               size={23}
@@ -393,10 +451,14 @@ function AuthHero({ variant = "login" }) {
             <strong>Instant Rewards</strong>
             <span>Earn as you engage</span>
           </div>
+
         </div>
 
-        {/* Trusted */}
+
+        {/* Trusted Platform */}
+
         <div className={styles.trustItem}>
+
           <div className={styles.trustIcon}>
             <Users
               size={23}
@@ -408,9 +470,11 @@ function AuthHero({ variant = "login" }) {
             <strong>Trusted Platform</strong>
             <span>Millions of happy users</span>
           </div>
+
         </div>
 
       </div>
+
     </section>
   );
 }
