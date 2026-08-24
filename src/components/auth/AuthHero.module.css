@@ -3,31 +3,26 @@
 ========================================================= */
 
 .hero {
-    position: relative;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background: transparent;
-    overflow: visible;
-    min-height: 0;
-    padding-right: 20px;
     box-sizing: border-box;
+    min-width: 0;
 }
 
 
 /* =========================================================
    MAIN HERO LAYOUT
-   LEFT = CONTENT
-   RIGHT = ILLUSTRATION
 ========================================================= */
 
 .heroMain {
     width: 100%;
+
     display: grid;
     grid-template-columns: 45% 55%;
-    align-items: center;
+
+    align-items: flex-start;
+
     gap: 0;
+
     box-sizing: border-box;
 }
 
@@ -39,10 +34,13 @@
 .heroLeft {
     width: 100%;
     min-width: 0;
+
     padding: 20px 10px 20px 4px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     box-sizing: border-box;
 }
 
@@ -53,57 +51,72 @@
 
 .heroCopy {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .heroCopy h1 {
     white-space: nowrap;
-    margin: 0 0 14px;
+
+    margin: 0 0 24px 0;
+
     font-size: 52px;
     line-height: 1.08;
     font-weight: 800;
+
     color: #0f1020;
 }
 
 .heroCopy h2 {
     white-space: nowrap;
+
     font-weight: 700;
     font-size: 25px;
     line-height: 1.35;
+
     color: #5b21b6;
-    margin: 18px 0 0;
+
+    margin: 10px 0 0;
 }
 
 .heroCopy p {
     margin: 18px 0 0;
+
     max-width: 390px;
+
     font-size: 18px;
     line-height: 1.75;
+
     color: #000000;
 }
 
+
 /* =========================================================
-   STATISTICS - COMPACT
+   STATISTICS
 ========================================================= */
 
 .stats {
     width: 100%;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 24px;
+
+    gap: 8px;
+
+    margin-top: 95px;
+
     position: relative;
     z-index: 10;
 }
 
 
 /* =========================================================
-   COMPACT STAT CARD
+   STAT CARD
 ========================================================= */
 
 .statCard {
-    min-height: 105px;
-    padding: 12px 8px;
+    min-height: 82px;
+
+    padding: 8px 6px;
 
     display: flex;
     flex-direction: column;
@@ -116,7 +129,7 @@
 
     border: 1px solid rgba(124, 58, 237, 0.08);
 
-    border-radius: 15px;
+    border-radius: 12px;
 
     box-shadow:
         0 8px 22px rgba(91, 33, 182, 0.07);
@@ -125,41 +138,31 @@
     z-index: 10;
 }
 
-
-/* =========================================================
-   STAT ICON
-========================================================= */
-
 .statIcon {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 11px;
+    border-radius: 8px;
 
     background: rgba(124, 58, 237, 0.10);
 
     color: #7c3aed;
 }
 
-
-/* =========================================================
-   STAT CONTENT
-========================================================= */
-
 .statContent {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 .statContent strong {
-    font-size: 22px;
+    font-size: 17px;
     line-height: 1;
 
     font-weight: 800;
@@ -168,11 +171,11 @@
 }
 
 .statContent span {
-    margin-top: 5px;
+    margin-top: 4px;
 
-    font-size: 12px;
+    font-size: 14px;
 
-    color: #514b62;
+    color: #26242c;
 
     white-space: nowrap;
 }
@@ -196,12 +199,6 @@
 
     z-index: 2;
 
-    /*
-       IMPORTANT:
-       Removed left: 95px.
-       This was pushing the complete artwork too far right.
-    */
-
     overflow: visible;
 }
 
@@ -220,7 +217,7 @@
 
     object-fit: contain;
 
-    z-index: 3;
+    z-index: 2;
 
     filter:
         drop-shadow(
@@ -236,9 +233,11 @@
    LOGIN ILLUSTRATION
 ========================================================= */
 
-.illustration-login {
-    width: 600px;
-    max-width: 100%;
+.login .mainIllustration {
+    width: 750px;
+    max-width: 140%;
+
+    margin-right: 25px;
 }
 
 
@@ -246,9 +245,14 @@
    REGISTER ILLUSTRATION
 ========================================================= */
 
-.illustration-register {
-    width: 540px;
-    max-width: 100%;
+.register .mainIllustration {
+    width: 710px;
+    max-width: 140%;
+
+    margin-top: -50px;
+    margin-right: 10px;
+
+    transform: translateY(-10px);
 }
 
 
@@ -256,9 +260,11 @@
    FORGOT PASSWORD ILLUSTRATION
 ========================================================= */
 
-.illustration-forgotPassword {
-    width: 500px;
-    max-width: 100%;
+.forgotPassword .mainIllustration {
+    width: 870px;
+    max-width: 155%;
+
+    margin-right: 60px;
 }
 
 
@@ -291,38 +297,13 @@
 
 
 /* =========================================================
-   DECORATIVE RING
-========================================================= */
-
-.heroRing {
-    position: absolute;
-
-    width: 350px;
-    height: 350px;
-
-    border-radius: 50%;
-
-    border:
-        5px solid rgba(255, 255, 255, 0.75);
-
-    box-shadow:
-        0 0 25px rgba(255, 255, 255, 0.55),
-        inset 0 0 20px rgba(255, 255, 255, 0.35);
-
-    z-index: 1;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
    FLOATING REWARD CARDS
 ========================================================= */
 
 .floatingCard {
     position: absolute;
 
-    width: 185px;
+    width: 200px;
     height: auto;
 
     object-fit: contain;
@@ -340,10 +321,6 @@
 
 /* =========================================================
    AMAZON CARD
-
-   Moved slightly upward/right from the text so there
-   is more breathing room between Amazon card and
-   "Welcome Back!"
 ========================================================= */
 
 .amazonCard {
@@ -371,8 +348,8 @@
 ========================================================= */
 
 .googleCard {
-    bottom: -5px;
-    right: 55px;
+    bottom: -3px;
+    right: 45px;
 
     transform: rotate(8deg);
 }
@@ -399,6 +376,7 @@
         );
 }
 
+
 /* =========================================================
    REAL DIAMOND DECORATIONS
 ========================================================= */
@@ -406,11 +384,14 @@
 .diamond {
     position: absolute;
 
+    width: 42px;
+    height: 42px;
+
     object-fit: contain;
 
-    pointer-events: none;
-
     z-index: 12;
+
+    pointer-events: none;
 
     filter:
         drop-shadow(
@@ -425,44 +406,35 @@
 /* Diamond above statistics */
 
 .diamondOne {
-    width: 65px;
+    width: 45px;
 
-    top: 8px;
+    top: 4px;
     left: 30px;
 
     transform: rotate(-12deg);
 }
 
 
-/* Diamond under first statistic card */
+/* Diamond above second statistics */
 
-.statsWrapper {
-    position: relative;
-    width: 100%;
-}
-
-.diamond {
-    position: absolute;
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
-    z-index: 5;
-    pointer-events: none;
-}
-
-/* Diamond ABOVE 2nd statistics card */
 .diamondTwo {
-    top: -45px;
+    top: -50px;
     left: 80%;
+
     transform: translateX(-50%);
 }
 
-/* Diamond UNDER 1st statistics card */
+
+/* Diamond under first statistics */
+
 .diamondThree {
     bottom: -20px;
     left: -40px;
+
     transform: translateX(-50%);
 }
+
+
 /* =========================================================
    FORGOT PASSWORD GEMS
 ========================================================= */
@@ -470,12 +442,14 @@
 .securityGemOne {
     top: 12%;
     left: 6%;
+
     animation-delay: 0.3s;
 }
 
 .securityGemTwo {
     bottom: 18%;
     right: 6%;
+
     animation-delay: 0.9s;
 }
 
@@ -506,9 +480,6 @@
 
 /* =========================================================
    LOGIN COINS
-
-   Kept close to the gift instead of moving them
-   too far toward the right.
 ========================================================= */
 
 .coinOne {
@@ -529,18 +500,21 @@
 .registerCoinOne {
     top: 15%;
     left: 4%;
+
     animation-delay: 0.2s;
 }
 
 .registerCoinTwo {
     bottom: 20%;
     right: 5%;
+
     animation-delay: 0.8s;
 }
 
 .registerCoinThree {
     top: 40%;
     right: 8%;
+
     animation-delay: 1.2s;
 }
 
@@ -608,13 +582,16 @@
 .sparkleTwo {
     bottom: 25%;
     left: 6%;
+
     animation-delay: 0.6s;
 }
 
 .sparkleThree {
     top: 45%;
     right: 12%;
+
     font-size: 16px;
+
     animation-delay: 1.2s;
 }
 
@@ -622,6 +599,7 @@
 /* =========================================================
    TRUST BAR
 ========================================================= */
+
 .trustBar {
     width: 100%;
 
@@ -632,7 +610,6 @@
     min-height: 90px;
 
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
 
     align-items: center;
@@ -647,6 +624,22 @@
 
     border-radius: 18px;
 }
+
+
+.forgotPassword .trustBar {
+    margin-top: -120px;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+
+.register .trustBar {
+    margin-top: -30px;
+}
+
+
 /* =========================================================
    TRUST ITEM
 ========================================================= */
@@ -658,6 +651,8 @@
     gap: 12px;
 
     padding: 4px 8px;
+
+    min-width: 0;
 }
 
 
@@ -695,10 +690,11 @@
     color: #171329;
 
     font-size: 13px;
-
     font-weight: 800;
 
     line-height: 1.2;
+
+    white-space: nowrap;
 }
 
 .trustItem span {
@@ -707,10 +703,11 @@
     color: #4b4658;
 
     font-size: 11px;
-
     font-weight: 600;
 
     line-height: 1.4;
+
+    white-space: nowrap;
 }
 
 
@@ -807,6 +804,7 @@
 
 /* =========================================================
    TABLET
+   769px - 1100px
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -856,24 +854,13 @@
         right: 35px;
     }
 
-    .gemOne {
-        right: 50px;
-    }
-
-    .gemTwo {
-        left: 20px;
-    }
-
-    .gemThree {
-        right: 65px;
-    }
-
     .stats {
         gap: 10px;
     }
 
     .statCard {
         min-height: 70px;
+
         padding: 12px 7px;
     }
 
@@ -893,20 +880,63 @@
 
 
 /* =========================================================
+   TABLET
+   769px - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .heroCopy h1 {
+        font-size: 36px;
+    }
+
+    .heroCopy h2 {
+        font-size: 17px;
+    }
+
+    .heroCopy p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .stats {
+        margin-top: 70px;
+    }
+
+    .statContent span {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
    TABLET / MOBILE
+   <= 768px
 ========================================================= */
 
 @media (max-width: 768px) {
 
     .hero {
+        width: 100%;
         padding-top: 0;
         padding-right: 0;
+
+        overflow: hidden;
     }
 
+
+    /* =====================================================
+       MAIN
+    ===================================================== */
+
     .heroMain {
+        width: 100%;
+
         display: flex;
         flex-direction: column;
+
         min-height: auto;
+
         gap: 10px;
     }
 
@@ -915,50 +945,58 @@
        LEFT
     ===================================================== */
 
-  .heroLeft {
-    width: 100%;
-    min-width: 0;
+    .heroLeft {
+        width: 100%;
 
-    padding: 20px 10px 20px 4px;
+        padding: 20px 10px 20px 10px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-    box-sizing: border-box;
+        box-sizing: border-box;
 
-    position: relative;
-}
+        position: relative;
+    }
+
 
     .heroCopy {
         width: 100%;
         max-width: 440px;
+
         margin-bottom: 20px;
     }
+
 
     .heroCopy h1 {
         margin: 0;
 
+        /*
+         * Allow the heading to wrap on mobile.
+         * This prevents horizontal overflow.
+         */
+        white-space: normal;
+
         font-size: 52px;
-
         line-height: 1.08;
-
         font-weight: 800;
 
         color: #0f1020;
     }
 
+
     .heroCopy h2 {
         margin: 18px 0 0;
 
+        white-space: normal;
+
         font-size: 25px;
-
         line-height: 1.35;
-
         font-weight: 700;
 
         color: #5b21b6;
     }
+
 
     .heroCopy p {
         margin: 18px 0 0;
@@ -966,7 +1004,6 @@
         max-width: 390px;
 
         font-size: 18px;
-
         line-height: 1.75;
 
         color: #252338;
@@ -980,8 +1017,7 @@
     .stats {
         display: grid;
 
-        grid-template-columns:
-            repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
 
         gap: 12px;
 
@@ -994,17 +1030,17 @@
         z-index: 20;
     }
 
+
     .statCard {
+        min-width: 0;
         min-height: 132px;
 
-        padding: 16px 10px;
+        padding: 16px 8px;
 
         display: flex;
-
         flex-direction: column;
 
         align-items: center;
-
         justify-content: center;
 
         border-radius: 14px;
@@ -1012,46 +1048,66 @@
         box-sizing: border-box;
     }
 
+
+    .statIcon {
+        flex-shrink: 0;
+
+        width: 36px;
+        height: 36px;
+    }
+
+
     .statCard svg {
         flex-shrink: 0;
 
         color: #7c3aed;
 
         width: 30px;
-
         height: 30px;
     }
 
-    .statCard > div {
-        display: flex;
 
+    .statContent {
+        min-width: 0;
+
+        display: flex;
         flex-direction: column;
 
+        align-items: center;
+
         gap: 5px;
+
+        margin-top: 4px;
     }
 
-    .statCard strong {
+
+    .statContent strong {
         display: block;
 
         color: #121222;
 
         font-size: 22px;
-
         line-height: 1;
 
         font-weight: 800;
     }
 
-    .statCard span {
+
+    .statContent span {
         display: block;
+
+        max-width: 100%;
 
         color: #696579;
 
         font-size: 12px;
-
         line-height: 1.3;
 
         font-weight: 500;
+
+        white-space: normal;
+
+        text-align: center;
     }
 
 
@@ -1071,17 +1127,21 @@
         overflow: visible;
     }
 
+
     .login .heroStage {
         min-height: 350px;
     }
+
 
     .register .heroStage {
         min-height: 320px;
     }
 
+
     .forgotPassword .heroStage {
         min-height: 310px;
     }
+
 
     .mainIllustration {
         position: relative;
@@ -1105,38 +1165,70 @@
             illustrationFloat 5s ease-in-out infinite;
     }
 
+
     .illustration-login {
         width: min(95%, 430px);
     }
 
 
+    .illustration-register {
+        width: min(95%, 430px);
+
+        max-width: 430px;
+
+        margin-top: -20px;
+        margin-right: 0;
+
+        transform: translateY(-10px);
+    }
+
+
+    .illustration-forgotPassword {
+        width: min(95%, 430px);
+
+        max-width: 430px;
+
+        margin-right: 0;
+    }
+
+
     /* =====================================================
-       CARDS
+       MAIN GLOW
+    ===================================================== */
+
+    .mainGlow {
+        width: 380px;
+        height: 380px;
+    }
+
+
+    /* =====================================================
+       FLOATING CARDS
     ===================================================== */
 
     .floatingCard {
         width: 100px;
     }
 
+
     .amazonCard {
         top: 5%;
-
         left: 5%;
 
         transform: rotate(-12deg);
     }
 
+
     .paypalCard {
         top: 45%;
-
         right: 0;
 
         transform: rotate(8deg);
     }
 
+
     .googleCard {
         bottom: 2%;
-
         right: 8%;
 
         transform: rotate(8deg);
@@ -1144,50 +1236,900 @@
 
 
     /* =====================================================
-       GEMS
+       DIAMONDS
     ===================================================== */
 
-    .gemOne {
+    .diamond {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    .diamondOne {
+        width: 48px;
+
         top: 8%;
-        right: 7%;
+        left: 8%;
     }
 
-    .gemTwo {
-        top: 43%;
-        left: 2%;
+
+    .diamondTwo {
+        top: 18%;
+        left: 82%;
     }
 
-    .gemThree {
-        bottom: 10%;
-        right: 12%;
+
+    .diamondThree {
+        bottom: 5%;
+        left: 7%;
     }
 
 
     /* =====================================================
-       TRUST
+       LOGIN COINS
+    ===================================================== */
+
+    .coinOne {
+        bottom: 14%;
+        left: 12%;
+    }
+
+
+    .coinTwo {
+        bottom: 6%;
+        left: 28%;
+    }
+
+
+    /* =====================================================
+       REGISTER COINS
+    ===================================================== */
+
+    .registerCoinOne {
+        top: 15%;
+        left: 5%;
+    }
+
+
+    .registerCoinTwo {
+        bottom: 20%;
+        right: 5%;
+    }
+
+
+    .registerCoinThree {
+        top: 40%;
+        right: 8%;
+    }
+
+
+    /* =====================================================
+       REGISTER SHIELD
+    ===================================================== */
+
+    .shield {
+        width: 65px;
+        height: 65px;
+
+        bottom: 8%;
+    }
+
+
+    /* =====================================================
+       FORGOT PASSWORD DECORATIONS
+    ===================================================== */
+
+    .securityGemOne {
+        top: 12%;
+        left: 6%;
+    }
+
+
+    .securityGemTwo {
+        bottom: 18%;
+        right: 6%;
+    }
+
+
+    .sparkle {
+        font-size: 17px;
+    }
+
+
+    /* =====================================================
+       TRUST BAR
     ===================================================== */
 
     .trustBar {
+        width: 100%;
+
         padding: 10px;
+
+        min-height: 80px;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 8px;
+
+        border-radius: 16px;
     }
+
+
+    .forgotPassword .trustBar {
+        margin-top: -70px;
+    }
+
+
+    .register .trustBar {
+        margin-top: -20px;
+    }
+
+
+    .trustItem {
+        min-width: 0;
+
+        gap: 8px;
+
+        padding: 4px;
+    }
+
 
     .trustIcon {
         width: 36px;
         height: 36px;
     }
 
+
+    .trustItem strong {
+        font-size: 11px;
+
+        white-space: normal;
+    }
+
+
+    .trustItem span {
+        font-size: 9px;
+
+        white-space: normal;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .heroLeft {
+        padding: 18px 16px 16px;
+    }
+
+
+    .heroCopy {
+        max-width: 100%;
+    }
+
+
+    .heroCopy h1 {
+        font-size: clamp(36px, 10vw, 48px);
+    }
+
+
+    .heroCopy h2 {
+        font-size: clamp(19px, 5.2vw, 24px);
+    }
+
+
+    .heroCopy p {
+        max-width: 100%;
+
+        font-size: 16px;
+
+        line-height: 1.65;
+    }
+
+
+    .stats {
+        gap: 8px;
+
+        margin-top: 24px;
+    }
+
+
+    .statCard {
+        min-height: 112px;
+
+        padding: 12px 5px;
+    }
+
+
+    .statIcon {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .statCard svg {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .statContent strong {
+        font-size: 18px;
+    }
+
+
+    .statContent span {
+        font-size: 10px;
+    }
+
+
+    .heroStage {
+        height: 330px;
+
+        min-height: 300px;
+    }
+
+
+    .login .heroStage {
+        min-height: 320px;
+    }
+
+
+    .register .heroStage {
+        min-height: 295px;
+    }
+
+
+    .forgotPassword .heroStage {
+        min-height: 285px;
+    }
+
+
+    .illustration-login {
+        width: min(94%, 390px);
+    }
+
+
+    .illustration-register {
+        width: min(94%, 390px);
+    }
+
+
+    .illustration-forgotPassword {
+        width: min(94%, 390px);
+    }
+
+
+    .mainGlow {
+        width: 330px;
+        height: 330px;
+    }
+
+
+    .floatingCard {
+        width: 82px;
+    }
+
+
+    .amazonCard {
+        left: 2%;
+    }
+
+
+    .paypalCard {
+        right: 1%;
+    }
+
+
+    .googleCard {
+        right: 6%;
+    }
+
+
+    .diamondOne {
+        width: 40px;
+
+        left: 5%;
+    }
+
+
+    .diamondTwo {
+        width: 30px;
+
+        left: 84%;
+    }
+
+
+    .diamondThree {
+        width: 30px;
+
+        left: 5%;
+    }
+
+
+    .coinOne svg {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .coinTwo svg {
+        width: 28px;
+        height: 28px;
+    }
+
+
+    .shield {
+        width: 58px;
+        height: 58px;
+    }
+
+
+    .trustBar {
+        margin-top: 12px;
+
+        padding: 10px 8px;
+
+        gap: 5px;
+    }
+
+
+    .forgotPassword .trustBar {
+        margin-top: -50px;
+    }
+
+
+    .register .trustBar {
+        margin-top: -15px;
+    }
+
+
+    .trustItem {
+        gap: 6px;
+    }
+
+
+    .trustIcon {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .trustIcon svg {
+        width: 19px;
+        height: 19px;
+    }
+
+
+    .trustItem strong {
+        font-size: 10px;
+    }
+
+
+    .trustItem span {
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   <= 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .heroLeft {
+        padding: 16px 14px 14px;
+    }
+
+
+    .heroCopy h1 {
+        font-size: clamp(32px, 10vw, 42px);
+    }
+
+
+    .heroCopy h2 {
+        font-size: clamp(18px, 5vw, 22px);
+    }
+
+
+    .heroCopy p {
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+
+    .stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 6px;
+
+        margin-top: 22px;
+    }
+
+
+    .statCard {
+        min-height: 100px;
+
+        padding: 10px 4px;
+
+        border-radius: 11px;
+    }
+
+
+    .statIcon {
+        width: 29px;
+        height: 29px;
+    }
+
+
+    .statCard svg {
+        width: 22px;
+        height: 22px;
+    }
+
+
+    .statContent {
+        margin-top: 3px;
+
+        gap: 3px;
+    }
+
+
+    .statContent strong {
+        font-size: 16px;
+    }
+
+
+    .statContent span {
+        font-size: 9px;
+    }
+
+
+    .heroStage {
+        height: 300px;
+
+        min-height: 280px;
+    }
+
+
+    .login .heroStage {
+        min-height: 290px;
+    }
+
+
+    .register .heroStage {
+        min-height: 270px;
+    }
+
+
+    .forgotPassword .heroStage {
+        min-height: 260px;
+    }
+
+
+    .illustration-login {
+        width: min(94%, 350px);
+    }
+
+
+    .illustration-register {
+        width: min(94%, 350px);
+    }
+
+
+    .illustration-forgotPassword {
+        width: min(94%, 350px);
+    }
+
+
+    .mainGlow {
+        width: 290px;
+        height: 290px;
+    }
+
+
+    .floatingCard {
+        width: 70px;
+    }
+
+
+    .diamondOne {
+        width: 34px;
+    }
+
+
+    .diamondTwo,
+    .diamondThree {
+        width: 27px;
+        height: 27px;
+    }
+
+
+    .registerCoinOne svg {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .registerCoinTwo svg {
+        width: 27px;
+        height: 27px;
+    }
+
+
+    .registerCoinThree svg {
+        width: 24px;
+        height: 24px;
+    }
+
+
+    .trustBar {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+        padding: 12px;
+
+        min-height: auto;
+
+        border-radius: 14px;
+    }
+
+
+    .trustItem {
+        width: 100%;
+
+        padding: 5px 6px;
+    }
+
+
+    .trustIcon {
+        width: 34px;
+        height: 34px;
+    }
+
+
     .trustItem strong {
         font-size: 11px;
     }
 
+
     .trustItem span {
         font-size: 9px;
+    }
+
+
+    .forgotPassword .trustBar {
+        margin-top: 0;
+    }
+
+
+    .register .trustBar {
+        margin-top: 0;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .heroLeft {
+        padding: 14px 12px 12px;
+    }
+
+
+    .heroCopy h1 {
+        font-size: 31px;
+
+        line-height: 1.08;
+    }
+
+
+    .heroCopy h2 {
+        font-size: 18px;
+
+        line-height: 1.3;
+    }
+
+
+    .heroCopy p {
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+
+    .stats {
+        gap: 5px;
+
+        margin-top: 20px;
+    }
+
+
+    .statCard {
+        min-height: 90px;
+
+        padding: 8px 3px;
+    }
+
+
+    .statIcon {
+        width: 27px;
+        height: 27px;
+    }
+
+
+    .statCard svg {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .statContent strong {
+        font-size: 15px;
+    }
+
+
+    .statContent span {
+        font-size: 8px;
+    }
+
+
+    .heroStage {
+        height: 270px;
+
+        min-height: 250px;
+    }
+
+
+    .login .heroStage {
+        min-height: 260px;
+    }
+
+
+    .register .heroStage {
+        min-height: 245px;
+    }
+
+
+    .forgotPassword .heroStage {
+        min-height: 235px;
+    }
+
+
+    .illustration-login,
+    .illustration-register,
+    .illustration-forgotPassword {
+        width: min(94%, 315px);
+    }
+
+
+    .mainGlow {
+        width: 250px;
+        height: 250px;
+    }
+
+
+    .floatingCard {
+        width: 58px;
+    }
+
+
+    .amazonCard {
+        top: 4%;
+        left: 1%;
+    }
+
+
+    .paypalCard {
+        top: 44%;
+        right: -1%;
+    }
+
+
+    .googleCard {
+        bottom: 1%;
+        right: 4%;
+    }
+
+
+    .diamondOne {
+        width: 29px;
+    }
+
+
+    .diamondTwo,
+    .diamondThree {
+        width: 23px;
+        height: 23px;
+    }
+
+
+    .shield {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .trustBar {
+        padding: 10px;
+    }
+
+
+    .trustItem {
+        gap: 8px;
+    }
+
+
+    .trustIcon {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .trustItem strong {
+        font-size: 10px;
+    }
+
+
+    .trustItem span {
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+   <= 320px
+========================================================= */
+
+@media (max-width: 320px) {
+
+    .heroLeft {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .heroCopy h1 {
+        font-size: 28px;
+    }
+
+
+    .heroCopy h2 {
+        font-size: 17px;
+    }
+
+
+    .heroCopy p {
+        font-size: 13px;
+    }
+
+
+    .stats {
+        gap: 4px;
+    }
+
+
+    .statCard {
+        min-height: 84px;
+
+        padding: 7px 2px;
+    }
+
+
+    .statIcon {
+        width: 24px;
+        height: 24px;
+    }
+
+
+    .statCard svg {
+        width: 18px;
+        height: 18px;
+    }
+
+
+    .statContent strong {
+        font-size: 14px;
+    }
+
+
+    .statContent span {
+        font-size: 7px;
+    }
+
+
+    .heroStage {
+        height: 240px;
+
+        min-height: 225px;
+    }
+
+
+    .login .heroStage {
+        min-height: 235px;
+    }
+
+
+    .register .heroStage {
+        min-height: 220px;
+    }
+
+
+    .forgotPassword .heroStage {
+        min-height: 215px;
+    }
+
+
+    .illustration-login,
+    .illustration-register,
+    .illustration-forgotPassword {
+        width: min(94%, 285px);
+    }
+
+
+    .mainGlow {
+        width: 220px;
+        height: 220px;
+    }
+
+
+    .floatingCard {
+        width: 50px;
+    }
+
+
+    .diamondOne {
+        width: 25px;
+    }
+
+
+    .diamondTwo,
+    .diamondThree {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .trustItem {
+        gap: 7px;
+    }
+
+
+    .trustIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .trustItem strong {
+        font-size: 9px;
+    }
+
+
+    .trustItem span {
+        font-size: 7px;
     }
 }
 
 
 /* =========================================================
    LARGE DESKTOP
+   >= 1200px
+
+   Existing desktop design preserved.
 ========================================================= */
 
 @media (min-width: 1200px) {
@@ -1196,21 +2138,13 @@
         padding-right: 10px;
     }
 
+
     .heroStage {
         height: 520px;
 
-        /*
-           No left offset here.
-           The artwork stays centered in its 55% column.
-        */
         left: 0;
     }
 
-    .illustration-login {
-        width: min(100%, 620px);
-
-        max-width: 620px;
-    }
 
     .illustration-register {
         width: min(95%, 560px);
@@ -1218,80 +2152,67 @@
         max-width: 560px;
     }
 
+
     .illustration-forgotPassword {
         width: min(95%, 520px);
 
         max-width: 520px;
     }
 
+
     .floatingCard {
         width: 185px;
     }
 
-    /*
-       Extra breathing room between the text and
-       Amazon card.
-    */
+
     .amazonCard {
         top: -5px;
         left: 125px;
     }
+
 
     .paypalCard {
         top: 245px;
         right: -10px;
     }
 
+
     .googleCard {
         bottom: -5px;
         right: 55px;
     }
 
-    .gemOne {
-        top: 50px;
-        right: 80px;
+
+    .illustration-login {
+        width: min(110%, 780px);
+
+        max-width: 780px;
     }
 
-    .gemTwo {
-        top: 215px;
-        left: 30px;
-    }
-
-    .gemThree {
-        bottom: 70px;
-        right: 100px;
-    }
 
     .stats {
-        padding-top: 30px;
-
-        width: 100%;
+        padding-top: 15px;
 
         grid-template-columns:
-            repeat(
-                3,
-                minmax(160px, 1fr)
-            );
+            repeat(3, minmax(110px, 1fr));
 
-        gap: 16px;
+        gap: 10px;
     }
+
 
     .statCard {
-        min-height: 110px;
+        min-height: 88px;
 
-        padding: 18px 20px;
+        padding: 10px 12px;
     }
 
-    .statCard svg {
-        width: 32px;
-        height: 32px;
-    }
 
     .statCard strong {
-        font-size: 24px;
+        font-size: 18px;
     }
 
+
     .statCard span {
-        font-size: 12px;
+        font-size: 11px;
     }
 }

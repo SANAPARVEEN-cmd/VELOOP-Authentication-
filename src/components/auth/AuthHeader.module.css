@@ -1,71 +1,94 @@
 .header {
     width: 100%;
-    height: 90px;
+    min-height: 90px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     padding: 0 28px;
-
     box-sizing: border-box;
 
     flex-shrink: 0;
+
+    /* Prevent children from causing horizontal overflow */
+    min-width: 0;
 }
+
 
 /* =========================================
    VELOOP BRAND
    ========================================= */
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    min-width: 0;
 
-  text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
 }
+
 
 /* Circular VELOOP logo */
-.logoImage {
-  width: 52px;
-  height: 52px;
 
-  object-fit: contain;
-  display: block;
+.logoImage {
+    width: 52px;
+    height: 52px;
+
+    object-fit: contain;
+    display: block;
+
+    flex-shrink: 0;
 }
+
 
 /* Text beside logo */
-.brandText {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
-  line-height: 1;
+.brandText {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    line-height: 1;
 }
+
 
 /* VELOOP */
+
 .brandName {
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.7px;
+    font-size: 24px;
+    font-weight: 800;
 
-  color: #111827;
+    letter-spacing: -0.7px;
 
-  line-height: 1;
+    color: #111827;
+
+    line-height: 1;
+
+    white-space: nowrap;
 }
 
+
 /* REWARDS */
+
 .brandSubtitle {
-  margin-top: 5px;
+    margin-top: 5px;
 
-  font-size: 9px;
-  font-weight: 700;
+    font-size: 9px;
+    font-weight: 700;
 
-  letter-spacing: 4px;
+    letter-spacing: 4px;
 
-  color: #5b21d6;
+    color: #5b21d6;
 
-  line-height: 1;
+    line-height: 1;
+
+    white-space: nowrap;
 }
 
 
@@ -74,44 +97,84 @@
    ========================================= */
 
 .languageButton {
-  height: 48px;
+    min-height: 48px;
 
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  padding: 0 16px;
+    gap: 10px;
 
-  background: rgba(255, 255, 255, 0.75);
+    padding: 0 16px;
 
-  border: 1px solid rgba(17, 24, 39, 0.08);
+    background: rgba(255, 255, 255, 0.75);
 
-  border-radius: 13px;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 13px;
 
-  color: #374151;
+    color: #374151;
 
-  font-size: 16px;
-  font-weight: 400;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    flex-shrink: 0;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
 }
+
 
 .languageButton:hover {
-  background: #ffffff;
+    background: #ffffff;
 
-  border-color: rgba(91, 33, 214, 0.15);
+    border-color: rgba(91, 33, 214, 0.15);
 
-  box-shadow: 0 4px 14px rgba(91, 33, 214, 0.08);
+    box-shadow: 0 4px 14px rgba(91, 33, 214, 0.08);
 }
 
+
+.languageButton:active {
+    transform: scale(0.98);
+}
+
+
 .languageButton:focus-visible {
-  outline: 2px solid #6d28d9;
-  outline-offset: 2px;
+    outline: 2px solid #6d28d9;
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+   ========================================= */
+
+@media (min-width: 1440px) {
+    .header {
+        min-height: 96px;
+        padding: 0 40px;
+    }
+
+    .logoImage {
+        width: 56px;
+        height: 56px;
+    }
+
+    .brandName {
+        font-size: 26px;
+    }
+
+    .languageButton {
+        min-height: 50px;
+        padding: 0 18px;
+    }
 }
 
 
@@ -120,24 +183,28 @@
    ========================================= */
 
 @media (max-width: 900px) {
-  .header {
-    min-height: 90px;
-    padding: 20px 32px;
-  }
+    .header {
+        min-height: 86px;
+        padding: 18px 28px;
+    }
 
-  .logoImage {
-    width: 48px;
-    height: 48px;
-  }
+    .logoImage {
+        width: 48px;
+        height: 48px;
+    }
 
-  .brandName {
-    font-size: 22px;
-  }
+    .brand {
+        gap: 10px;
+    }
 
-  .brandSubtitle {
-    font-size: 8px;
-    letter-spacing: 3.5px;
-  }
+    .brandName {
+        font-size: 22px;
+    }
+
+    .brandSubtitle {
+        font-size: 8px;
+        letter-spacing: 3.5px;
+    }
 }
 
 
@@ -146,84 +213,181 @@
    ========================================= */
 
 @media (max-width: 600px) {
-  .header {
-    min-height: 76px;
-    padding: 16px 20px;
-  }
+    .header {
+        min-height: 76px;
 
-  .brand {
-    gap: 9px;
-  }
+        padding: 14px 20px;
 
-  .logoImage {
-    width: 42px;
-    height: 42px;
-  }
+        gap: 12px;
+    }
 
-  .brandName {
-    font-size: 19px;
-    letter-spacing: -0.5px;
-  }
+    .brand {
+        gap: 9px;
+    }
 
-  .brandSubtitle {
-    margin-top: 4px;
+    .logoImage {
+        width: 42px;
+        height: 42px;
+    }
 
-    font-size: 7px;
-    letter-spacing: 3px;
-  }
+    .brandName {
+        font-size: 19px;
+        letter-spacing: -0.5px;
+    }
 
-  .languageButton {
-    height: 42px;
+    .brandSubtitle {
+        margin-top: 4px;
 
-    padding: 0 12px;
+        font-size: 7px;
+        letter-spacing: 3px;
+    }
 
-    gap: 7px;
+    .languageButton {
+        min-height: 42px;
 
-    border-radius: 11px;
+        padding: 0 12px;
 
-    font-size: 14px;
-  }
+        gap: 7px;
 
-  .languageButton svg:first-child {
-    width: 16px;
-    height: 16px;
-  }
+        border-radius: 11px;
 
-  .languageButton svg:last-child {
-    width: 14px;
-    height: 14px;
-  }
+        font-size: 14px;
+    }
+
+    .languageButton svg {
+        flex-shrink: 0;
+    }
+
+    .languageButton svg:first-child {
+        width: 16px;
+        height: 16px;
+    }
+
+    .languageButton svg:last-child {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   381px - 480px
+   ========================================= */
+
+@media (max-width: 480px) {
+    .header {
+        padding: 14px 16px;
+    }
+
+    .logoImage {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brandName {
+        font-size: 18px;
+    }
+
+    .brandSubtitle {
+        font-size: 6.5px;
+        letter-spacing: 2.7px;
+    }
+
+    .languageButton {
+        min-height: 40px;
+        padding: 0 10px;
+    }
 }
 
 
 /* =========================================
    VERY SMALL MOBILE
+   320px - 380px
    ========================================= */
 
 @media (max-width: 380px) {
-  .header {
-    padding: 14px 16px;
-  }
+    .header {
+        padding: 12px 14px;
+        gap: 8px;
+    }
 
-  .logoImage {
-    width: 38px;
-    height: 38px;
-  }
+    .brand {
+        gap: 7px;
+    }
 
-  .brandName {
-    font-size: 17px;
-  }
+    .logoImage {
+        width: 36px;
+        height: 36px;
+    }
 
-  .brandSubtitle {
-    font-size: 6px;
-    letter-spacing: 2.5px;
-  }
+    .brandName {
+        font-size: 16px;
+        letter-spacing: -0.3px;
+    }
 
-  .languageButton {
-    padding: 0 9px;
-  }
+    .brandSubtitle {
+        margin-top: 3px;
 
-  .languageButton span {
-    font-size: 13px;
-  }
+        font-size: 5.5px;
+        letter-spacing: 2.2px;
+    }
+
+    .languageButton {
+        min-height: 38px;
+
+        padding: 0 8px;
+
+        gap: 5px;
+
+        border-radius: 9px;
+
+        font-size: 12px;
+    }
+
+    .languageButton svg:first-child {
+        width: 14px;
+        height: 14px;
+    }
+
+    .languageButton svg:last-child {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+
+/* =========================================
+   EXTRA SMALL DEVICES
+   320px and below
+   ========================================= */
+
+@media (max-width: 320px) {
+    .header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .brand {
+        gap: 6px;
+    }
+
+    .logoImage {
+        width: 32px;
+        height: 32px;
+    }
+
+    .brandName {
+        font-size: 15px;
+    }
+
+    .brandSubtitle {
+        font-size: 5px;
+        letter-spacing: 1.8px;
+    }
+
+    .languageButton {
+        padding: 0 7px;
+        font-size: 11px;
+    }
 }

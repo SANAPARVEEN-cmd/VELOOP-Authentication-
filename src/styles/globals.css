@@ -633,15 +633,13 @@ a {
   }
 
   .login-subtitle {
-    font-size: 13px;
-
-    margin: 10px 0 20px;
+    font-size: 20px;
+    color : rgb((60, 58, 58)20, 19, 19);
+    margin : 10px 0 20px;
   }
-
   .auth-tabs {
     margin-bottom: 20px;
   }
-
   .auth-tabs button {
     min-height: 60px;
 

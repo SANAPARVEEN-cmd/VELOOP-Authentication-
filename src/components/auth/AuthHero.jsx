@@ -8,13 +8,9 @@ import {
 } from "lucide-react";
 
 import diamond from "../../assets/images/rewards/diamond.png";
-
 import styles from "./AuthHero.module.css";
 
 import rewardHero from "../../assets/images/rewards/reward-hero.png";
-import registerHero from "../../assets/images/rewards/register-hero.png";
-import forgotPasswordHero from "../../assets/images/rewards/forgot-password-hero.png";
-
 import amazonCard from "../../assets/images/rewards/amazon-card.png";
 import paypalCard from "../../assets/images/rewards/paypal-card.png";
 import googlePlayCard from "../../assets/images/rewards/google-play-card.png";
@@ -39,7 +35,7 @@ const heroConfig = {
     subtitle: "Start Earning Rewards",
     description:
       "Join VELOOP Rewards and start earning exciting rewards today.",
-    illustration: registerHero,
+    illustration: rewardHero,
     showStats: true,
     showRewardCards: false,
   },
@@ -49,7 +45,7 @@ const heroConfig = {
     subtitle: "Reset Your Password",
     description:
       "No worries! Reset your password in a few simple steps.",
-    illustration: forgotPasswordHero,
+    illustration: rewardHero,
     showStats: false,
     showRewardCards: false,
   },
@@ -63,8 +59,9 @@ function AuthHero({ variant = "login" }) {
   const config = heroConfig[variant] || heroConfig.login;
 
   return (
-    <section className={`${styles.hero} ${styles[variant]}`}>
-
+    <section
+      className={`${styles.hero} ${styles[variant]}`}
+    >
       {/* =================================================
           MAIN HERO CONTENT
           LEFT = TEXT + STATS
@@ -112,7 +109,6 @@ function AuthHero({ variant = "login" }) {
                 </div>
               </div>
 
-
               {/* Rewards Earned */}
 
               <div className={styles.statCard}>
@@ -128,7 +124,6 @@ function AuthHero({ variant = "login" }) {
                   <span>Rewards Earned</span>
                 </div>
               </div>
-
 
               {/* Brands */}
 
@@ -150,9 +145,8 @@ function AuthHero({ variant = "login" }) {
           )}
         </div>
 
-
         {/* =================================================
-            RIGHT SIDE — ILLUSTRATION
+            RIGHT SIDE — ILLUSTRATION STAGE
         ================================================= */}
 
         <div
@@ -169,7 +163,6 @@ function AuthHero({ variant = "login" }) {
 
           <div className={styles.heroRing} />
 
-
           {/* =================================================
               LOGIN REWARD DECORATIONS
           ================================================= */}
@@ -177,9 +170,7 @@ function AuthHero({ variant = "login" }) {
           {variant === "login" && config.showRewardCards && (
             <>
 
-              {/* =================================================
-                  AMAZON GIFT CARD
-              ================================================= */}
+              {/* Amazon Gift Card */}
 
               <img
                 src={amazonCard}
@@ -187,10 +178,7 @@ function AuthHero({ variant = "login" }) {
                 className={`${styles.floatingCard} ${styles.amazonCard}`}
               />
 
-
-              {/* =================================================
-                  PAYPAL CARD
-              ================================================= */}
+              {/* PayPal Card */}
 
               <img
                 src={paypalCard}
@@ -198,10 +186,7 @@ function AuthHero({ variant = "login" }) {
                 className={`${styles.floatingCard} ${styles.paypalCard}`}
               />
 
-
-              {/* =================================================
-                  GOOGLE PLAY CARD
-              ================================================= */}
+              {/* Google Play Card */}
 
               <img
                 src={googlePlayCard}
@@ -209,14 +194,7 @@ function AuthHero({ variant = "login" }) {
                 className={`${styles.floatingCard} ${styles.googleCard}`}
               />
 
-
-              {/* =================================================
-                  REAL DIAMONDS
-              ================================================= */}
-
-              {/* Diamond 1
-                  Under the first statistics card
-              */}
+              {/* Diamond 1 */}
 
               <img
                 src={diamond}
@@ -225,10 +203,7 @@ function AuthHero({ variant = "login" }) {
                 className={`${styles.diamond} ${styles.diamondOne}`}
               />
 
-
-              {/* Diamond 2
-                  Above the second statistics card
-              */}
+              {/* Diamond 2 */}
 
               <img
                 src={diamond}
@@ -237,10 +212,7 @@ function AuthHero({ variant = "login" }) {
                 className={`${styles.diamond} ${styles.diamondTwo}`}
               />
 
-
-              {/* Diamond 3
-                  Under the first statistics card
-              */}
+              {/* Diamond 3 */}
 
               <img
                 src={diamond}
@@ -249,10 +221,7 @@ function AuthHero({ variant = "login" }) {
                 className={`${styles.diamond} ${styles.diamondThree}`}
               />
 
-
-              {/* =================================================
-                  COINS
-              ================================================= */}
+              {/* Coins */}
 
               <div
                 className={`${styles.coin} ${styles.coinOne}`}
@@ -274,7 +243,6 @@ function AuthHero({ variant = "login" }) {
 
             </>
           )}
-
 
           {/* =================================================
               REGISTER DECORATIONS
@@ -310,7 +278,6 @@ function AuthHero({ variant = "login" }) {
                 />
               </div>
 
-
               {/* Shield */}
 
               <div className={styles.shield}>
@@ -319,7 +286,6 @@ function AuthHero({ variant = "login" }) {
                   strokeWidth={1.7}
                 />
               </div>
-
 
               {/* Register Gem */}
 
@@ -336,7 +302,6 @@ function AuthHero({ variant = "login" }) {
 
             </>
           )}
-
 
           {/* =================================================
               FORGOT PASSWORD DECORATIONS
@@ -363,7 +328,6 @@ function AuthHero({ variant = "login" }) {
                 ✦
               </div>
 
-
               {/* Security Gem 1 */}
 
               <div
@@ -376,7 +340,6 @@ function AuthHero({ variant = "login" }) {
                   color="#7C3AED"
                 />
               </div>
-
 
               {/* Security Gem 2 */}
 
@@ -394,7 +357,6 @@ function AuthHero({ variant = "login" }) {
             </>
           )}
 
-
           {/* =================================================
               MAIN HERO IMAGE
           ================================================= */}
@@ -410,7 +372,6 @@ function AuthHero({ variant = "login" }) {
         </div>
       </div>
 
-
       {/* =================================================
           TRUST BAR
       ================================================= */}
@@ -420,7 +381,6 @@ function AuthHero({ variant = "login" }) {
         {/* Secure & Safe */}
 
         <div className={styles.trustItem}>
-
           <div className={styles.trustIcon}>
             <ShieldCheck
               size={23}
@@ -432,14 +392,11 @@ function AuthHero({ variant = "login" }) {
             <strong>Secure & Safe</strong>
             <span>Your data is protected</span>
           </div>
-
         </div>
-
 
         {/* Instant Rewards */}
 
         <div className={styles.trustItem}>
-
           <div className={styles.trustIcon}>
             <Gift
               size={23}
@@ -451,14 +408,11 @@ function AuthHero({ variant = "login" }) {
             <strong>Instant Rewards</strong>
             <span>Earn as you engage</span>
           </div>
-
         </div>
-
 
         {/* Trusted Platform */}
 
         <div className={styles.trustItem}>
-
           <div className={styles.trustIcon}>
             <Users
               size={23}
@@ -470,11 +424,9 @@ function AuthHero({ variant = "login" }) {
             <strong>Trusted Platform</strong>
             <span>Millions of happy users</span>
           </div>
-
         </div>
 
       </div>
-
     </section>
   );
 }

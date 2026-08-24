@@ -1,10 +1,7 @@
-/* =========================================
-   AUTH LAYOUT
-========================================= */
 .authLayout {
     width: 100%;
     min-height: 100vh;
-    height: auto;
+    min-height: 100dvh;
 
     display: flex;
     flex-direction: column;
@@ -27,20 +24,66 @@
         ),
         var(--veloop-background);
 
+    /* Prevent accidental horizontal scrolling */
+    overflow-x: hidden;
 
+    /* Prevent width issues caused by padding/borders */
+    max-width: 100%;
 }
-/* =========================================
-   LAPTOP / TABLET
-========================================= */
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* ================================
+   Tablets
+================================ */
 
 @media (max-width: 991px) {
-  .authLayout {
-    min-height: 100dvh;
-  
-  }
+    .authLayout {
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+
+/* ================================
+   Mobile
+================================ */
+
+@media (max-width: 767px) {
+    .authLayout {
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        border: none;
+        border-radius: 0;
+    }
+}
+
+
+/* ================================
+   Small Mobile
+   320px - 480px
+================================ */
+
+@media (max-width: 480px) {
+    .authLayout {
+        min-height: 100svh;
+    }
+}
+
+
+/* ================================
+   Very Small Screens
+   320px and below
+================================ */
+
+@media (max-width: 320px) {
+    .authLayout {
+        min-width: 0;
+        width: 100%;
+    }
 }
