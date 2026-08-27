@@ -1684,3 +1684,370 @@ a {
         height: 18px;
     }
 }
+
+/* =========================================================
+   MOBILE ONLY — FINAL AUTH PAGE ORDER
+   Desktop + Tablet (577px+) = COMPLETELY UNCHANGED
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+    /* Main mobile layout */
+    .auth-container {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 10px 12px 30px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* =====================================================
+       1. HERO
+       ===================================================== */
+
+    .auth-container > :first-child {
+        order: 1;
+        width: 100%;
+    }
+
+    /* =====================================================
+       2. LOGIN / REGISTER / FORGOT CARD
+       ===================================================== */
+
+    .auth-container > :nth-child(2) {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /*
+       Keep the existing AuthCard visual design.
+       Only make it fit the mobile viewport.
+    */
+    .auth-container > .auth-card,
+    .auth-container > :nth-child(2) {
+        box-sizing: border-box;
+    }
+
+    /* =====================================================
+       CARD CONTENT
+       ===================================================== */
+
+    .auth-container > .auth-card .cardContent,
+    .auth-container > :nth-child(2) .cardContent {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 24px 18px 16px;
+    }
+
+    /* =====================================================
+       SECURITY / TRUST BAR
+       It remains at the bottom of AuthCard,
+       immediately after the login content.
+       ===================================================== */
+
+    .auth-container > .auth-card .securityBar,
+    .auth-container > :nth-child(2) .securityBar {
+        width: auto;
+        margin: 0 16px;
+        padding: 14px 0 16px;
+    }
+
+    /* =====================================================
+       LOGIN PAGE
+       ===================================================== */
+
+    .login-page {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .login-page h2 {
+        font-size: clamp(23px, 7vw, 30px);
+        line-height: 1.15;
+    }
+
+    .login-subtitle {
+        font-size: 12px;
+        line-height: 1.5;
+        margin: 8px 0 18px;
+    }
+
+    /* =====================================================
+       TABS
+       ===================================================== */
+
+    .auth-tabs {
+        width: 100%;
+        margin-bottom: 18px;
+    }
+
+    .auth-tabs button {
+        min-width: 0;
+        min-height: 52px;
+        padding: 7px 3px;
+        gap: 4px;
+        font-size: 10px;
+    }
+
+    .auth-tabs button svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* =====================================================
+       FORM
+       ===================================================== */
+
+    .form-group {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+
+    .input-wrapper {
+        width: 100%;
+        height: 44px;
+        padding: 0 11px;
+        gap: 7px;
+        border-radius: 9px;
+    }
+
+    .input-wrapper input {
+        min-width: 0;
+        font-size: 13px;
+    }
+
+    /* =====================================================
+       REMEMBER / FORGOT
+       ===================================================== */
+
+    .login-options {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        margin: 10px 0 17px;
+        font-size: 10px;
+    }
+
+    /* =====================================================
+       LOGIN BUTTON
+       ===================================================== */
+
+    .login-button {
+        width: 100%;
+        height: 45px;
+        font-size: 13px;
+        border-radius: 9px;
+    }
+
+    /* =====================================================
+       CREATE ACCOUNT
+       ===================================================== */
+
+    .create-account {
+        font-size: 11px;
+        margin-top: 16px;
+    }
+
+    /* =====================================================
+       SECURITY BAR
+       ===================================================== */
+
+    .securityBar {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .securityItem {
+        min-width: 0;
+        gap: 7px;
+    }
+
+    .securityIcon {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+
+    .securityIcon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .securityText {
+        min-width: 0;
+    }
+
+    .securityText strong {
+        font-size: 9px;
+        line-height: 1.25;
+    }
+
+    .securityText span {
+        font-size: 8px;
+        line-height: 1.25;
+    }
+
+    .lockBadge {
+        width: 44px;
+        height: 44px;
+    }
+
+    .lockBadge svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .authFooter,
+    .auth-footer {
+        width: 100%;
+        margin-top: 4px;
+        padding: 18px 12px;
+        box-sizing: border-box;
+        font-size: 10px;
+    }
+
+    .footer-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .footer-content span {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-link {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 375px) {
+
+    .auth-container {
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 12px;
+    }
+
+    .auth-container > :nth-child(2) .cardContent {
+        padding: 21px 15px 14px;
+    }
+
+    .auth-tabs button {
+        min-height: 47px;
+        font-size: 9px;
+    }
+
+    .auth-tabs button svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .input-wrapper {
+        height: 41px;
+    }
+
+    .login-button {
+        height: 42px;
+        font-size: 12px;
+    }
+
+    .securityBar {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+}
+
+
+/* =========================================================
+   320px AND BELOW
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+    .auth-container {
+        padding-left: 8px;
+        padding-right: 8px;
+        gap: 10px;
+    }
+
+    .auth-container > :nth-child(2) .cardContent {
+        padding: 18px 11px 12px;
+    }
+
+    .auth-tabs button {
+        min-height: 43px;
+        font-size: 8px;
+        padding: 4px 1px;
+    }
+
+    .auth-tabs button svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .input-wrapper {
+        height: 38px;
+        padding: 0 8px;
+    }
+
+    .input-wrapper input {
+        font-size: 11.5px;
+    }
+
+    .login-button {
+        height: 39px;
+        font-size: 11px;
+    }
+
+    .create-account {
+        font-size: 9.5px;
+    }
+
+    .securityText strong {
+        font-size: 8.5px;
+    }
+
+    .securityText span {
+        font-size: 7.5px;
+    }
+
+    .lockBadge {
+        width: 40px;
+        height: 40px;
+    }
+
+    .lockBadge svg {
+        width: 17px;
+        height: 17px;
+    }
+}
