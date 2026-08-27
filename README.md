@@ -88,7 +88,7 @@ The forgot password flow allows users to:
 # 📱 Mobile Preview
 
 <p align="center">
-  <img src="./screenshots/mobile-auth.png" width="35%" alt="Veloop Mobile Authentication UI" />
+  <img src="./screenshots/mobile-auth.jpeg" width="35%" alt="Veloop Mobile Authentication UI" />
 </p>
 
 The authentication interface is optimized for smaller screens while maintaining usability, accessibility, and visual consistency.
