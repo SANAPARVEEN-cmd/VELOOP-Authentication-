@@ -33,7 +33,7 @@ The application follows a **component-based React architecture**, making authent
 ## 🔐 Login
 
 <p align="center">
-  <img src="./screenshots/login-desktop.png" width="85%" alt="Veloop Login Page" />
+  <img src="./screenshots/logedin-desktop.png" width="85%" alt="Veloop Login Page" />
 </p>
 
 The login page provides:
